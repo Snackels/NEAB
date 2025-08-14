@@ -15,6 +15,7 @@ by Team *YBR-NEAB*
 
 ### This Github repository contains:
 - [About our team](#about-our-team)
+- [Engineering Consideration](#engineering-consideration)
 - [Hardware Information](#hardware-information)
 - [Raspberry Pi Program](#raspberry-pi-program)
 - [Arduino Program](#arduino-program)
@@ -31,3 +32,4 @@ Our team consists of three members, each assigned a different role:
 2. Norapat Kaset – Norapat is responsible for designing and building our robot.
 3. Vorawet Narkglom – Vorawet is the programmer who coded the robot.   
 
+## **Engineering Consideration.**
