@@ -15,3 +15,10 @@ by Team *YBR-NEAB*
 
 ### This Github repository contains:
 - [About our team](#about-our-team)
+- [Hardware Information](#hardware-information)
+- [Raspberry Pi Program](#raspberry-pi-program)
+- [Arduino Program](#arduino-program)
+- [Collecting Data](#collecting-data)
+- [Cleaning Data](#cleaning-data)
+- [Machine Learning](machine-learning)
+- [Contact Us!](#contact)
