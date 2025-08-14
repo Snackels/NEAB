@@ -33,3 +33,7 @@ Our team consists of three members, each assigned a different role:
 3. Vorawet Narkglom – Vorawet is the programmer who coded the robot.   
 
 ## **Engineering Consideration.**
+
+During our robot’s design process, we faced several challenges, most notably converting real-world measurements into our 3D modeling software. After printing, we frequently encountered errors with small features. For instance, a 0.5 mm screw hole could not be printed accurately , resulting in undersized holes. This highlighted the importance of considering printer limitations during design. Careful attention to these details helps prevent unnecessary redesigns and reprints.
+
+Moreover, we also discovered that using a differential is essential. Initially, we placed gears of the same size next to each other, but this method proved ineffective. Incorporating a differential allowed the wheels to rotate at different speeds, which is crucial for smooth turns and overall robot performance. 
