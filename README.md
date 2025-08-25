@@ -42,22 +42,41 @@ The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printi
 
 ## Printed Robot Chassis
 ### Lower Base
-This part is the base of our robot. It holds almost all the essential parts; controller, motor, steering servo, light sensors, buck converter, and differential. In designing this part, we need to account for the precise component sizes. In our robot, we uses a LEGO TECHNIC parts like axle, differential, and gear to ensure that those part would not break during our section. And to hold that axle, we used poles on the back to hold the LEGO part in place. With this design, it allows the robot to reach it's full potential.
+The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
+ 
+When designing this part, precise measurements were critical to ensure a proper fit for each component. In our robot, we uses a **LEGO TECHNIC** parts like axle, differential, and gear to ensure that those part would not break during our section.
+
+To secure the LEGO axle, we designed support poles at the back of the base to hold it firmly in place. With this design, it allows the robot to reach it's full potential.
 
 ### Upper Base.
-This part was design to stay 3 centimeters on top of the lower base. It holds the remaining components. It also provides more stability for our robot. To make sure that the screw wouldn't interfere with lower part. We utilized the counterbore technic to hide the screw flawlessly giving that seemless look. Additionally, it also included with a battery slot at the back.
+
+The upper base is positioned 3 cm above the lower base and is designed to hold the remaining components while providing additional stability to the robot.  
+
+To ensure a clean and seamless build, we applied the **counterbore technique** so that screws do not interfere with the lower section. This approach allowed us to hide the screws neatly, giving the chassis a screwless apperance.  
+
+Additionally, the upper base includes a **battery slot** at the back, ensuring secure placement and easy accessibility during operation.  
 
 ### LiDAR Holder
-It was placed on top of the upper base. This component ensrure that the LiDAR stays higher than other parts to avoid the LiDAR from detecting the robot. And it also include a slot for our gyro sensor. It sits right underneath the LiDAR. With this design, it minimize our robot size and ensure that the LiDAR doesn't exceed the 10cm limit.
+
+The LiDAR holder is mounted on top of the upper base to keep the LiDAR elevated above other components. This prevents the sensor from mistakenly detecting parts of the robot itself.  
+
+The holder also included a **slot for the gyro sensor**, positioned directly beneath the LiDAR. This compact arrangement minimizes the overall robot size while ensuring that the LiDAR remains within the **10 cm height limit** to avoid detecting over the wall.  
 
 ### Camera mount
-This component serves as a stand for our camera. It also comes with the cover for the front and top of the camera. This serves two purposes. First, it provides protection. When the robot collides with the wall, it has a guard to protect the lens. Second, it also cover the top so that the camera would see only inside the track.
+
+This component serves as a **stand for the camera** and includes protective covers for both the front and top.  
+
+The design serves two key purposes:  
+1. **Protection** – In case of collisions with walls, the front cover acts as a guard to protect the camera lens from damage.  
+2. **Vision Control** – The top cover blocks external light and distractions, ensuring the camera only captures the track area.  
+
+This combination enhances both the durability and reliability of the vision system during section.  
 
 ### Motor Bracket
 It holds the motor with the lower base. This design offer us a small, effective, and strong bracket. With 3 screw holes for attaching it to the base and 2 screw holes for attaching it to motor. This part also uses the Counterbore technique.
 
 ### Gear Adapter
-The gear we used was from a LEGO Technic part. Meaning that we can't attach it directly to the motor. We designed this part to place it on motor's rotating axle. Then, we added two LEGO pins to attach it to the gear.
+The gear we used was from **LEGO Technic**. Meaning that we can't attach it directly to the motor. We designed this part to place it on motor's rotating axle. Then, we added two LEGO pins to attach it to the gear.
 
 ### Buck Converter case
 The buck converter comes with a lot of pin under it. This was caused by soldering. This case was made to make sure that the bottom stays flat and avoid current leakage.
