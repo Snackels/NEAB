@@ -104,6 +104,8 @@ We selected a 28 tooth double bevel gear to avoid the robot from losing it's spe
 
 ### Light Sensors: ZX-03 from INEX
 
+### Touch Sensor: ZX-Switch from INEX
+
 ## Driving and Steering
 ### Motor: GM25-370 from Chihai Motor
 
@@ -115,3 +117,7 @@ We selected a 28 tooth double bevel gear to avoid the robot from losing it's spe
 ### Stepdown 1: HW316E V6.0.1 
 
 ### Stepdown 2: LM2596
+
+### On-Off Switch
+
+### Wire Splitter
