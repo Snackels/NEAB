@@ -82,3 +82,36 @@ The gear we used was from **LEGO Technic**. Meaning that we can't attach it dire
 The buck converter comes with a lot of pin under it. This was caused by soldering. This case was made to make sure that the bottom stays flat and avoid current leakage.
 
 ### Steering Module
+It contains 3 main components: servo link, main connector, and wheel bracket. When our mechanic designed this part, he needed to account for the steering degree. We uses the method call **Ackerman Steering**, a steering system developed for better tight angle steer. With this method, the inner wheel would turn tighther than the out wheel, similar to the F1 car. We also have to make sure that when we turn, the wheel wouldn't hit the robot itself.
+
+## LEGO Technic Parts
+### Differential
+This differencial comes with a 28 teeth double bevel gear, it's identical to the one we use with our motor. Inside, it's featuring with 5 small gears inside to allows the wheel on the other side rotate freely. This part ensures that the wheel would rotate at the same speed even in the turn.
+
+### Gear
+We selected a 28 tooth double bevel gear to avoid the robot from losing it's speed or torque. It's made of **ABS Plastic** giving it the durability. 
+
+# Hardware Components
+## Controller
+### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
+
+### Motor Driver: Raspberry Pi Motor Driving Expansion Board from DFRobot
+
+## Sensors and visibility
+### LiDAR: RPLIDAR C1 from SLAMTEC
+
+### Camera: 
+
+### Light Sensors: ZX-03 from INEX
+
+## Driving and Steering
+### Motor: GM25-370 from Chihai Motor
+
+### Servo: Geekservo 360 2KG from ELECFREAKS
+
+## Power management
+### Battery: Firefox 3-cell 11.1v 1300mah from Firefox
+
+### Stepdown 1: HW316E V6.0.1 
+
+### Stepdown 2: LM2596
