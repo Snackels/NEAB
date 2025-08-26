@@ -100,7 +100,7 @@ We selected a 28 tooth double bevel gear to avoid the robot from losing it's spe
 ## Sensors and visibility
 ### LiDAR: RPLIDAR C1 from SLAMTEC
 
-### Camera: 
+### Camera: HBV-1716WA
 
 ### Light Sensors: ZX-03 from INEX
 
