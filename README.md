@@ -280,4 +280,6 @@ The 11.1V battery enhances the robot's performance by providing higher voltage, 
 ### On-Off Switch
 This switch is for cutting the power from the battery to the robot. The regulation states that before starting the robot, the power must be cut off. That's when this switch came in. To use this switch, we solder red wire (Positive pole) to the switch on 1 side for input. Then another solder red wire for output on the opposite side. You can put the black wire (Negative pole) straight into the step down. When the switch is turned on, the power from the battery will direct into stepdowns and then the Raspberry Pi and Driver board.
 
+---
+
 ### Wire Splitter
