@@ -95,7 +95,45 @@ We selected a 28 tooth double bevel gear to avoid the robot from losing it's spe
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
 
+The Raspberry Pi 4 Model B was the first component we selected, and it serves as the most crucial part of the robot, acting as the brain of the system. Without it, the robot cannot process information or make decisions. The Raspberry Pi is widely used as a controller due to its versatility and accessibility, functioning like a mini computer with 4 USB ports, 40 GPIO pins, and dedicated slots for a camera and monitor. It can be powered via a USB-C connector with an operating voltage of 5 volts. Since we chose ROS2 as the robot’s operating system, the Raspberry Pi 4 was the ideal choice to handle the required computation and communication tasks. And It can be connect with Wi-Fi or LAN cable for communicating with the programming computer.
+#### Specification
+| Feature | Details |
+|---------|---------|
+| Processor | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz |
+| Memory Options | 1GB, 2GB, 4GB or 8GB LPDDR4-3200 SDRAM |
+| Wireless | 2.4 GHz and 5.0 GHz IEEE 802.11ac, Bluetooth 5.0, BLE |
+| Ethernet | Gigabit Ethernet |
+| USB Ports | 2 × USB 3.0, 2 × USB 2.0 |
+| GPIO | 40-pin header (fully backwards compatible) |
+| Display Output | 2 × micro-HDMI® (up to 4kp60), 2-lane MIPI DSI |
+| Camera Interface | 2-lane MIPI CSI port |
+| Audio/Video | 4-pole stereo audio and composite video port |
+| Video Support | H.265 (4kp60 decode), H.264 (1080p60 decode, 1080p30 encode) |
+| Graphics | OpenGL ES 3.1, Vulkan 1.0 |
+| Storage | Micro-SD card slot (OS and data storage) |
+| Power Input | 5V DC via USB-C (min 3A), 5V DC via GPIO (min 3A), Power over Ethernet (PoE with HAT) |
+| Operating Temperature | 0 – 50 °C ambient |
+
+---
+
 ### Motor Driver: Raspberry Pi Motor Driving Expansion Board from DFRobot
+Using a Raspberry Pi comes with a problem. It can't control the motor. Even if It can, the max operating power is 5 volts which is not nearly enough for utilizing a motor. That's why we picked this board. It can be placed on top of the existing GPIO pin. The maximum input value is 25 volts, more than enough to power the motor. And it's the perfect choice considering the space it take.
+#### Specification
+| Feature | Details |
+|---------|---------|
+| Power Supply Voltage | 6 ~ 25V |
+| Power Interface | DC2.1 jack or 3.5 mm wiring column |
+| Servo Support | 8 × PWM servo interfaces with 3-pin (black, red, blue GVS) standard wiring; servo power can be switched to an external supply |
+| PWM Resolution | 12-bit resolution with adjustable PWM frequency up to 1.6 kHz; configurable push-pull or open-drain output |
+| DC Motor Support | 4 × DC motor interfaces (6–24V) via PH2.0 or screw terminals |
+| Encoder Motor Support | 4 × encoder motor drive interfaces (6–25V) |
+| Compatibility | Works with Raspberry Pi Zero/Zero W/A+/B+/2B/3B/3B+/4B |
+| Interfaces | Reserved camera and DIP display screen ribbon interface |
+| Expansion Ports | 2 × I²C interfaces and 1 × serial interface |
+| I²C Address | 0x60 |
+| Extra Features | Onboard passive buzzer and infrared receiver |
+
+---
 
 ## Sensors and visibility
 ### LiDAR: RPLIDAR C1 from SLAMTEC
