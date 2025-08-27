@@ -139,26 +139,23 @@ Using a Raspberry Pi comes with a problem. It can't control the motor. Even if I
 ### LiDAR: RPLIDAR C1 from SLAMTEC
 This is a LiDAR, a device that emitted light toward the surface and then measure the time it take to bounce back. Most of the car uses it for parking. This part plays a crucial role in this competition, by measuring the distance between the inner and outer wall then divide by 2 so that the robot would stay in the perfect middle. And it also plays a significant role in parking sequence due to it's ability to view 360 degree. We can connect the LiDAR with the USB port on Raspberry Pi, making it very user friendly.
 #### Specification
-<div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 16px; background: #f9fafb;">
+| Feature                     | Details                                                                 |
+|------------------------------|-------------------------------------------------------------------------|
+| **Distance Range**           | White object: 0.05–12 m (70% reflectivity)<br>Black object: 0.05–6 m (10% reflectivity) |
+| **Sample Rate**              | 5 kHz                                                                  |
+| **Scanning Frequency**       | 8–12 Hz (10 Hz typical)                                                |
+| **Angular Resolution**       | 0.72° (typical)                                                        |
+| **Scan Field Flatness**      | 0°–1.5°                                                                |
+| **Communication Interface**  | TTL UART                                                               |
+| **Communication Speed**      | 460800 baud                                                            |
+| **Accuracy**                 | ±30 mm                                                                 |
+| **Resolution**               | 15 mm                                                                  |
+| **Degree of Protection**     | IP54                                                                   |
+| **Ambient Light Limit**      | 40,000 lux                                                             |
+| **Weight**                   | 110 g                                                                  |
+| **Working Temperature**      | -10 °C to +40 °C                                                       |
+| **Storage Temperature**      | -20 °C to +60 °C                                                       |
 
-<table>
-  <tr><td><b>Distance Range</b></td><td>White object: 0.05–12 m (70% reflectivity)<br>Black object: 0.05–6 m (10% reflectivity)</td></tr>
-  <tr><td><b>Sample Rate</b></td><td>5 kHz</td></tr>
-  <tr><td><b>Scanning Frequency</b></td><td>8–12 Hz (10 Hz typical)</td></tr>
-  <tr><td><b>Angular Resolution</b></td><td>0.72° (typical)</td></tr>
-  <tr><td><b>Scan Field Flatness</b></td><td>0°–1.5°</td></tr>
-  <tr><td><b>Communication Interface</b></td><td>TTL UART</td></tr>
-  <tr><td><b>Communication Speed</b></td><td>460800 baud</td></tr>
-  <tr><td><b>Accuracy</b></td><td>±30 mm</td></tr>
-  <tr><td><b>Resolution</b></td><td>15 mm</td></tr>
-  <tr><td><b>Degree of Protection</b></td><td>IP54</td></tr>
-  <tr><td><b>Ambient Light Limit</b></td><td>40,000 lux</td></tr>
-  <tr><td><b>Weight</b></td><td>110 g</td></tr>
-  <tr><td><b>Working Temperature</b></td><td>-10 °C to +40 °C</td></tr>
-  <tr><td><b>Storage Temperature</b></td><td>-20 °C to +60 °C</td></tr>
-</table>
-
-</div>
 ---
 
 ### Camera: HBV-1716WA
