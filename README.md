@@ -91,7 +91,7 @@ This differencial comes with a 28 teeth double bevel gear, it's identical to the
 ### Gear
 We selected a 28 tooth double bevel gear to avoid the robot from losing it's speed or torque. It's made of **ABS Plastic** giving it the durability. 
 
-# Hardware Components
+# Hardware Information
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
 
@@ -175,7 +175,48 @@ This component is very important for avoiding obstacle. It can detect red and gr
 ---
 
 ### Gyro Sensor: BNO055 from DFRobot
+Gyro sensor is a component that enables a robot to determine its orientation and turn in the appropriate direction. The gyro sensors detect 3 axis: yaw, pitch, and roll. We chose this gyro sensor specifically because of how effective it is. It collaborate with LiDAR and camera to ensure that the robot would not steer of it's course when it's turning to avoid the obstacle. And it also helps when the robot initiate the parking. It helps the robot make sure that it is turning toward the right direction. The gyro uses I2C wiring. The I2C features 4 different wire: SDA, SCL, 5 volts, and Ground. The wires go onto the GPIO pins on Raspberry Pi.
+#### Specification
+| Feature                          | Details                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Operating Voltage**            | 3.3 V – 5 V DC                                                          |
+| **Operating Current**            | 5 mA                                                                    |
+| **Interface**                    | Gravity-I2C                                                             |
+| **Operating Temperature**        | -40 ~ +80 °C                                                            |
+| **Product Dimension**            | 32 × 27 mm / 1.26 × 1.06”                                              |
 
+##### BNO055 Accelerometer
+| Feature                          | Details                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Acceleration Ranges**          | ±2 g / ±4 g / ±8 g / ±16 g                                             |
+| **Low-pass Filter Bandwidth**    | 1 kHz ~ <8 Hz                                                           |
+| **Operation Modes**              | Normal, Suspend, Low Power, Standby, Deep Suspend                       |
+| **Interrupt Control**            | Motion-triggered interrupt signal                                       |
+
+##### BNO055 Gyroscope
+| Feature                          | Details                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Ranges**                       | ±125°/s ~ 2000°/s (switchable)                                         |
+| **Low-pass Filter Bandwidth**    | 523 Hz ~ 12 Hz                                                          |
+| **Operation Modes**              | Normal, Fast Power Up, Deep Suspend, Suspend, Advanced Power Save       |
+| **Interrupt Control**            | Motion-triggered interrupt signal                                       |
+
+##### BNO055 Geomagnetic
+| Feature                          | Details                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Magnetic Field Range**         | ±1300 μT (x-, y-axis), ±2500 μT (z-axis)                                |
+| **Magnetic Field Resolution**    | ~0.3                                                                    |
+| **Operating Modes**              | Low Power, Regular, Enhanced Regular, High Accuracy                     |
+| **Power Modes**                  | Normal, Sleep, Suspend, Force                                           |
+
+##### BMP280 Digital Pressure Sensor
+| Feature                          | Details                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Pressure Range**               | 300 ~ 1100 hPa                                                          |
+| **Relative Accuracy**            | ±0.12 hPa (~ ±1 m)                                                     |
+| **Absolute Accuracy**            | ±1 hPa (~ ±8.33 m)                                                     |
+| **Temperature Range**            | 0 °C ~ 65 °C                                                            |
+| **Temperature Resolution**       | 0.01 °C                                                                 |
 
 ---
 
@@ -204,7 +245,7 @@ This motor is usually used for a sumo robot due to it's speed and power. We then
 ---
 
 ### Servo: Geekservo 360 2KG from ELECFREAKS
-We use this servo to steer the robot. This servo is compatible with LEGO, making it easy and convenient to build the robot by just putting studs in the hole on the side. We like how you can connect two axles to the dual outputs on this servo so you can power two wheels or gears or mount the servo securely inside articulated limbs and other contraptions. Additionally, the gears inside these servos will **slip** when the blocking load is too high instead of jamming, helping avoid damage to your servos and boards. It can be connected to servo pin on the motor driver.
+We use this servo to steer the robot. This servo is compatible with LEGO, making it easy and convenient to build the robot by just putting studs in the hole on the side. We like how you can connect two axles to the dual outputs on this servo so you can power two wheels or gears or mount the servo securely inside articulated limbs and other contraptions. Additionally, the gears inside these servos will **slip** when the blocking load is too high instead of jamming, helping avoid damage to our servo and board. It can be connected to servo pin on the motor driver.
 #### Specification
 | Feature                 | Details                                    |
 |--------------------------|--------------------------------------------|
