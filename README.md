@@ -228,6 +228,8 @@ Reflected Light Sensors come in various color. Each color can be used for differ
 ### Touch Sensor: ZX-Switch from INEX
 This button gives us an easier way to start the robot. Since the controller board doesn't come with switches. So, we found this button that could be attached to the frame outside the board using bolt. It gives us the advantages, when we start the robot we can turn on the switch and then keep the robot on the ground so that it would have time to reset it's gyro and other components. Then we press the switch to start and stop the robot. This can be wired the same as the light sensor.
 
+---
+
 ## Driving and Steering
 ### Motor: GM25-370 from Chihai Motor
 This motor is usually used for a sumo robot due to it's speed and power. We then uses this with our robot because it can help us achive the speed we need to win this competition. And since our robot is very heavy due to the various components, this motor comes in real handy. We uses this motor with the drive motor board to control the speed and the power it uses. The rotating axis is connected to a gear which then transfer the spinning to a differential then the wheels.
