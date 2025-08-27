@@ -44,7 +44,7 @@ The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printi
 ### Lower Base
 The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
  
-When designing this part, precise measurements were critical to ensure a proper fit for each component. In our robot, we uses a **LEGO TECHNIC** parts like axle, differential, and gear to ensure that those part would not break during our section.
+When designing this part, precise measurements were critical to ensure a proper fit for each component. In our robot, we uses a **LEGO TECHNIC** parts like axle, differential, and gear to ensure that those part would not break during our sessions.
 
 To secure the LEGO axle, we designed support poles at the back of the base to hold it firmly in place. With this design, it allows the robot to reach it's full potential.
 
@@ -70,7 +70,7 @@ The design serves two key purposes:
 1. **Protection** – In case of collisions with walls, the front cover acts as a guard to protect the camera lens from damage.  
 2. **Vision Control** – The top cover blocks external light and distractions, ensuring the camera only captures the track area.  
 
-This combination enhances both the durability and reliability of the vision system during section.  
+This combination enhances both the durability and reliability of the vision system during sessions.  
 
 ### Motor Bracket
 It holds the motor with the lower base. This design offer us a small, effective, and strong bracket. With 3 screw holes for attaching it to the base and 2 screw holes for attaching it to motor. This part also uses the Counterbore technique.
@@ -234,7 +234,7 @@ This motor is usually used for a sumo robot due to it's speed and power. We then
 #### Specification
 | Feature                          | Details                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
-| **Voltage**                      | DC 12.0 V                                                               |
+| **Voltage**                      | DC 7.4-12.0 V                                                               |
 | **Power**                        | 26 W                                                                    |
 | **Unloaded Speed**               | 1000 RPM @ 0.60 A                                                       |
 | **Maximum Power Point (1)**      | Load: 2.3 kg·cm (0.22 N·m)<br>Speed: 780 RPM<br>Power: 17 W<br>Current: 2.5 A |
@@ -261,11 +261,23 @@ We use this servo to steer the robot. This servo is compatible with LEGO, making
 
 ## Power management
 ### Battery: Firefox 3-cell 11.1v 1300mah from Firefox
+The 11.1V battery enhances the robot's performance by providing higher voltage, which reduces current draw and minimizes power losses during our sessions. This battery ensures stable and continuous functionality without significant voltage drops, even under high current loads, a critical factor during intense practice sessions and competitions. The battery has 1300 mah which is enough to power all of our components. We also uses 2 step down for our robot which will be mentioned later on.
+#### Specification
+| Feature               | Details                                   |
+|-----------------------|-------------------------------------------|
+| **Cells**             | 3                                         |
+| **Voltage**           | 11.1 V                                    |
+| **Capacity**          | 1300 mAh 20C                              |
+| **Charging Current**  | Up to 5 × capacity (5C)                   |
+| **Connectors**        | Dean type, easily disconnectable          |
+
+---
 
 ### Stepdown 1: HW316E V6.0.1 
 
 ### Stepdown 2: LM2596
 
 ### On-Off Switch
+This switch is for cutting the power from the battery to the robot. The regulation states that before starting the robot, the power must be cut off. That's when this switch came in. To use this switch, we solder red wire (Positive pole) to the switch on 1 side for input. Then another solder red wire for output on the opposite side. You can put the black wire (Negative pole) straight into the step down. When the switch is turned on, the power from the battery will direct into stepdowns and then the Raspberry Pi and Driver board.
 
 ### Wire Splitter
