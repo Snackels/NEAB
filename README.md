@@ -159,15 +159,64 @@ This is a LiDAR, a device that emitted light toward the surface and then measure
 ---
 
 ### Camera: HBV-1716WA
+This component is very important for avoiding obstacle. It can detect red and green obstacle from distance to avoid crashing into it. It can co-operate with the LiDAR to ensure the maximum efficiency when the robot turns to avoid the block. This camera doesn't have it's own micro-controller meaning that it can achive it's full **frame per sec** performance. And it can also be connect to Raspberry Pi through USB port.
+#### Specification
+| Feature                | Details                                                                 |
+|-------------------------|-------------------------------------------------------------------------|
+| **Model**              | HBV-1716WA                                                              |
+| **Highest Resolution** | 1920 × 1080                                                             |
+| **Field of View**      | 140°                                                                    |
+| **Chip**               | OV2710 (1/2.7")                                                         |
+| **Frame Per Second**   | 30 FPS
+| **Weight**             | Approx. 32 g / 1.1 oz                                                   |
+| **Outer Size**         | Approx. 38 × 38 × 25 mm / 1.5 × 1.5 × 1.0 in                            |
+| **Inner Size**         | Approx. 32 × 32 × 25 mm / 1.3 × 1.3 × 1.0 in                            |
 
-### Light Sensors: ZX-03 from INEX
+---
+
+### Gyro Sensor: BNO055 from DFRobot
+
+
+---
+
+### Reflected Light Sensors: TC-01 from Princebot
+Reflected Light Sensors come in various color. Each color can be used for different surface color. This track has 3 different colors: red, blue, and white. We tried using a single red or blue light, but it doesn't work. So at first we come up with using 2 sensors at the same time. And in the end, we settle on using a single **White light** color. White has an ability to amazingly seperate the red, blue, and white. It's purpose is to count and detect lines. This sensor uses **JST** head as a connector. The connector has 3 wire, red as 3.3 volts, white as data, and black as ground. Each of the wire goes to Raspberry Pi's GPIO pins.
+
+---
 
 ### Touch Sensor: ZX-Switch from INEX
+This button gives us an easier way to start the robot. Since the controller board doesn't come with switches. So, we found this button that could be attached to the frame outside the board using bolt. It gives us the advantages, when we start the robot we can turn on the switch and then keep the robot on the ground so that it would have time to reset it's gyro and other components. Then we press the switch to start and stop the robot. This can be wired the same as the light sensor.
 
 ## Driving and Steering
 ### Motor: GM25-370 from Chihai Motor
+This motor is usually used for a sumo robot due to it's speed and power. We then uses this with our robot because it can help us achive the speed we need to win this competition. And since our robot is very heavy due to the various components, this motor comes in real handy. We uses this motor with the drive motor board to control the speed and the power it uses. The rotating axis is connected to a gear which then transfer the spinning to a differential then the wheels.
+#### Specification
+| Feature                          | Details                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Voltage**                      | DC 12.0 V                                                               |
+| **Power**                        | 26 W                                                                    |
+| **Unloaded Speed**               | 1000 RPM @ 0.60 A                                                       |
+| **Maximum Power Point (1)**      | Load: 2.3 kg·cm (0.22 N·m)<br>Speed: 780 RPM<br>Power: 17 W<br>Current: 2.5 A |
+| **Maximum Power Point (2)**      | Load: 5.0 kg·cm (0.5 N·m)<br>Speed: 500 RPM<br>Power: 25.6 W<br>Current: 4.5 A |
+| **Plugging Parameter**           | 2.3 kg·cm (0.21 N·m) @ 16 A                                             |
+| **Gear Ratio**                   | 20:1                                                                    |
+
+---
 
 ### Servo: Geekservo 360 2KG from ELECFREAKS
+We use this servo to steer the robot. This servo is compatible with LEGO, making it easy and convenient to build the robot by just putting studs in the hole on the side. We like how you can connect two axles to the dual outputs on this servo so you can power two wheels or gears or mount the servo securely inside articulated limbs and other contraptions. Additionally, the gears inside these servos will **slip** when the blocking load is too high instead of jamming, helping avoid damage to your servos and boards. It can be connected to servo pin on the motor driver.
+#### Specification
+| Feature                 | Details                                    |
+|--------------------------|--------------------------------------------|
+| **Rotation**            | 360°                                       |
+| **Start Voltage**       | 2.5 V                                      |
+| **Working Voltage**     | 3.3 – 6.0 V                                |
+| **Rated Voltage**       | 4.8 V                                      |
+| **Rated Current**       | 70 mA                                      |
+| **Maximum Torque**      | 1.6 ± 0.2 kg·cm (at 4.8 V)                  |
+| **Angle Rotation Speed**| 60° / 0.14 s                               |
+
+---
 
 ## Power management
 ### Battery: Firefox 3-cell 11.1v 1300mah from Firefox
