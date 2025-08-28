@@ -40,9 +40,10 @@ Another key learning was the importance of incorporating a differential system. 
 
 The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printing. This approach provided durability, lightweight construction, and effective protection for the onboard hardware. The design was fully customized by our mechanic to meet the specific needs of our robot.
 ## 3D Printer and Filament
-### Bambu Lab P1S
-<p>
-<img src="" width="450"/>
+### Bambu Lab P1S Combo
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/P1S%20Combo.png" width="800"/>
+</p>
 This is our 3D printer, which we use to produce both prototypes and the final robot chassis. It is capable of high-speed printing without compromising quality or risking failure. The printer features a fully enclosed chamber, allowing safe printing of high-temperature or hazardous materials such as ABS and ASA. It is one of Bambu Lab’s best-selling models.
 
 Additionally, it comes with an Automated Material System (AMS), enabling the printer to handle up to four different materials—whether the same or different types of plastic. The AMS also includes an Auto Reload function, allowing us to print overnight without worrying about filament running out.
@@ -72,10 +73,22 @@ Additionally, it comes with an Automated Material System (AMS), enabling the pri
 ---
 
 ### Polylactic Acid or PLA 
-PLA is the most common type of filament used in 3D printing. It is easy to print, produces minimal stringing, and requires low printing temperatures. However, it has some downsides: it cannot withstand high heat and is relatively brittle. For this reason, we use PLA for very thin parts that support the robot without bending.
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/Sunlu%20PLA%2B.png" width="800"/>
+</p>
+PLA is the most common filament used in 3D printing. It is easy to print, produces minimal stringing, and requires relatively low printing temperatures. However, it also has some drawbacks: it cannot withstand high heat and is more brittle compared to other materials. Because of this, we use PLA for thin parts that need to remain lightweight while still providing support without bending.
 
-### Polyethylene Terephthalate Glycol or PETG 
-PETG is another widely used 3D printing filament. It is flexible, strong, chemically resistant, and can withstand high temperatures. However, it tends to cause more stringing and produces a slightly rougher surface finish compared to PLA. Being impact-resistant, we use PETG for parts that are likely to experience collisions, ensuring the robot remains intact even after hundreds of hits.
+For our robot, we selected **Sunlu PLA+ 2.0**, an enhanced version of standard PLA. This material is stronger, lighter, and more flexible, giving us the benefits of PLA while improving durability and performance.
+
+### Polyethylene Terephthalate Glycol or PETG
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/Polylite%20PETG.png" width="800"/>
+</p> 
+PETG is another popular 3D printing filament, valued for its flexibility, strength, chemical resistance, and ability to withstand higher temperatures than PLA. Its main drawbacks are increased stringing and a slightly rougher surface finish.
+
+Because PETG is highly impact-resistant, we use it for components that are more likely to experience collisions, ensuring the robot remains intact even after repeated impacts.
+
+For our robot, we selected **Polymaker PolyLite PETG**. Polymaker is a trusted brand known for its consistency and reliability, with minimal defects. This PETG is particularly user-friendly, offering printability close to that of PLA while maintaining the toughness needed for demanding parts.
 
 ---
 
