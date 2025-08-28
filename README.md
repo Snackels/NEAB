@@ -79,13 +79,17 @@ PETG is another widely used 3D printing filament. It is flexible, strong, chemic
 
 ## Printed Robot Chassis
 ### Lower Base
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lower%20Base.png" width="400" >
 The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
  
 When designing this part, precise measurements were critical to ensure a proper fit for each component. In our robot, we uses a **LEGO TECHNIC** parts like axle, differential, and gear to ensure that those part would not break during our sessions.
 
 To secure the LEGO axle, we designed support poles at the back of the base to hold it firmly in place. With this design, it allows the robot to reach it's full potential.
 
-### Upper Base.
+### Upper Base
 
 The upper base is positioned 3 cm above the lower base and is designed to hold the remaining components while providing additional stability to the robot.  
 
@@ -115,7 +119,7 @@ It holds the motor with the lower base. This design offer us a small, effective,
 ### Gear Adapter
 The gear we used was from **LEGO Technic**. Meaning that we can't attach it directly to the motor. We designed this part to place it on motor's rotating axle. Then, we added two LEGO pins to attach it to the gear.
 
-### Buck Converter case
+### Step-Down Case
 The buck converter comes with a lot of pin under it. This was caused by soldering. This case was made to make sure that the bottom stays flat and avoid current leakage.
 
 ### Steering Module
