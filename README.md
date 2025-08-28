@@ -80,7 +80,7 @@ PETG is another widely used 3D printing filament. It is flexible, strong, chemic
 ## Printed Robot Chassis
 ### Lower Base
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lower%20Base.png" width="420"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lower%20Base.png" width="800"/>
 </p>
 The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
  
