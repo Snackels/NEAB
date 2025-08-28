@@ -199,7 +199,7 @@ Screws come in various sizes. We designed our robot primarily using M3 screws, a
 
 ### PCB Support Post
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="400"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="200"/>
 </p>
 The support posts connect the first and second floors of the robot. They enhance stability, ensuring that the LiDAR and camera remain steady during operation.
 
