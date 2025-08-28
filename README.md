@@ -41,6 +41,8 @@ Another key learning was the importance of incorporating a differential system. 
 The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printing. This approach provided durability, lightweight construction, and effective protection for the onboard hardware. The design was fully customized by our mechanic to meet the specific needs of our robot.
 ## 3D Printer and Filament
 ### Bambu Lab P1S
+<p>
+<img src="" width="450"/>
 This is our 3D printer, which we use to produce both prototypes and the final robot chassis. It is capable of high-speed printing without compromising quality or risking failure. The printer features a fully enclosed chamber, allowing safe printing of high-temperature or hazardous materials such as ABS and ASA. It is one of Bambu Lab’s best-selling models.
 
 Additionally, it comes with an Automated Material System (AMS), enabling the printer to handle up to four different materials—whether the same or different types of plastic. The AMS also includes an Auto Reload function, allowing us to print overnight without worrying about filament running out.
@@ -140,18 +142,18 @@ The buck converter comes with a lot of pin under it. This was caused by solderin
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Steering%20Module.png" width="800"/>
 </p>
-It contains 3 main components: servo link, main connector, and wheel bracket. When our mechanic designed this part, he needed to account for the steering degree. We uses the method call **Ackerman Steering**, a steering system developed for better tight angle steer. With this method, the inner wheel would turn tighther than the out wheel, similar to the F1 car. We also have to make sure that when we turn, the wheel wouldn't hit the robot itself.
+It consists of three main components: the servo link, main connector, and wheel bracket. When our mechanic designed this part, careful consideration was given to the steering angle. We applied the Ackermann Steering Principle, a system developed to achieve tighter and more efficient turns. With this method, the inner wheel turns at a sharper angle than the outer wheel—similar to the steering system used in Formula 1 cars. We also ensured that, during turns, the wheels would not collide with the robot’s body.
 
 ## LEGO Technic Parts
 ### Differential
 <p align="center">
-  <img src="" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Differential.png" width="800"/>
 </p>
 This differential includes a 28-tooth double bevel gear, identical to the one used with our motor. Inside, it contains five small gears that allow the opposite wheel to rotate freely. This mechanism ensures that both wheels rotate at the correct speed, even when the robot is turning.
 
 ### Gear
 <p align="center">
-  <img src="" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="800"/>
 </p>
 We selected a 28-tooth double bevel gear to prevent the robot from losing speed or torque. It is made of ABS plastic, providing durability, and matches the size of the differential.
 
