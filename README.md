@@ -79,10 +79,9 @@ PETG is another widely used 3D printing filament. It is flexible, strong, chemic
 
 ## Printed Robot Chassis
 ### Lower Base
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lower%20Base.png" width="400" >
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lower%20Base.png" width="420"/>
+</p>
 The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
  
 When designing this part, precise measurements were critical to ensure a proper fit for each component. In our robot, we uses a **LEGO TECHNIC** parts like axle, differential, and gear to ensure that those part would not break during our sessions.
