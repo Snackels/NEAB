@@ -1,5 +1,5 @@
-# Documentation for WRO Future Engineer 2025
-by Team *YBR-NEAB*
+# **Documentation for WRO Future Engineer 2025**
+by Team **YBR-NEAB**
 
 
 ![]([https://lh3.googleusercontent.com/u/0/drive-viewer/AJc5JmS-gvzix8rqHiP9ptq7tHeZygsObiNOmIOgPZ77TDPFEsBTKvNW-LatH-ngLn_0nhACZ-FHElf1pMwIivX24kCyNMjfTw=w1920-h929](http://www2.yothinburana.ac.th/website/images/logo1.png))
@@ -41,6 +41,8 @@ Another key learning was the importance of incorporating a differential system. 
 The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printing. This approach provided durability, lightweight construction, and effective protection for the onboard hardware. The design was fully customized by our mechanic to meet the specific needs of our robot.
 
 ## Printed Robot Chassis
+### Bambu Lab P1S
+This is our 3D-Printer. We use this printer to print out both prototype and real chassis. It's capable of printing at high speed without risking the failure. It features and enclosed chamber for printing a hazardant material like ABS and ASA. It's one of the best-seller printer from Bambu Lab. We also have an automated material system, also known as AMS. It helps the robot achive the 
 ### Lower Base
 The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
  
