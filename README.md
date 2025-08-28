@@ -89,7 +89,9 @@ When designing this part, precise measurements were critical to ensure a proper 
 To secure the LEGO axle, we designed support poles at the back of the base to hold it firmly in place. With this design, it allows the robot to reach it's full potential.
 
 ### Upper Base
-
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Upper%20Base.png" width="800"/>
+</p>
 The upper base is positioned 3 cm above the lower base and is designed to hold the remaining components while providing additional stability to the robot.  
 
 To ensure a clean and seamless build, we applied the **counterbore technique** so that screws do not interfere with the lower section. This approach allowed us to hide the screws neatly, giving the chassis a screwless apperance.  
@@ -97,13 +99,17 @@ To ensure a clean and seamless build, we applied the **counterbore technique** s
 Additionally, the upper base includes a **battery slot** at the back, ensuring secure placement and easy accessibility during operation.  
 
 ### LiDAR Holder
-
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/LiDAR%20Holder.png" width="800"/>
+</p>
 The LiDAR holder is mounted on top of the upper base to keep the LiDAR elevated above other components. This prevents the sensor from mistakenly detecting parts of the robot itself.  
 
 The holder also included a **slot for the gyro sensor**, positioned directly beneath the LiDAR. This compact arrangement minimizes the overall robot size while ensuring that the LiDAR remains within the **10 cm height limit** to avoid detecting over the wall.  
 
 ### Camera mount
-
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Cam%20Mount.png" width="800"/>
+</p>
 This component serves as a **stand for the camera** and includes protective covers for both the front and top.  
 
 The design serves two key purposes:  
@@ -113,15 +119,27 @@ The design serves two key purposes:
 This combination enhances both the durability and reliability of the vision system during sessions.  
 
 ### Motor Bracket
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Motor%20Bracket.png" width="800"/>
+</p>
 It holds the motor with the lower base. This design offer us a small, effective, and strong bracket. With 3 screw holes for attaching it to the base and 2 screw holes for attaching it to motor. This part also uses the Counterbore technique.
 
 ### Gear Adapter
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Gear%20Adapter.png" width="800"/>
+</p>
 The gear we used was from **LEGO Technic**. Meaning that we can't attach it directly to the motor. We designed this part to place it on motor's rotating axle. Then, we added two LEGO pins to attach it to the gear.
 
 ### Step-Down Case
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Step-Down%20Case.png" width="800"/>
+</p>
 The buck converter comes with a lot of pin under it. This was caused by soldering. This case was made to make sure that the bottom stays flat and avoid current leakage.
 
 ### Steering Module
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Steering%20Module.png" width="800"/>
+</p>
 It contains 3 main components: servo link, main connector, and wheel bracket. When our mechanic designed this part, he needed to account for the steering degree. We uses the method call **Ackerman Steering**, a steering system developed for better tight angle steer. With this method, the inner wheel would turn tighther than the out wheel, similar to the F1 car. We also have to make sure that when we turn, the wheel wouldn't hit the robot itself.
 
 ## LEGO Technic Parts
