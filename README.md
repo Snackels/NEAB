@@ -147,13 +147,13 @@ It consists of three main components: the servo link, main connector, and wheel 
 ## LEGO Technic Parts
 ### Differential
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Differential.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Differential.png" width="400"/>
 </p>
 This differential includes a 28-tooth double bevel gear, identical to the one used with our motor. Inside, it contains five small gears that allow the opposite wheel to rotate freely. This mechanism ensures that both wheels rotate at the correct speed, even when the robot is turning.
 
 ### Gear
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Snackels/NEAB/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="400"/>
 </p>
 We selected a 28-tooth double bevel gear to prevent the robot from losing speed or torque. It is made of ABS plastic, providing durability, and matches the size of the differential.
 
