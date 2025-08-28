@@ -1,4 +1,4 @@
-# **Documentation for WRO Future Engineer 2025** bbruhuhuhyyg
+# **Documentation for WRO Future Engineer 2025** 
 by Team **YBR-NEAB**
 
 
@@ -39,10 +39,45 @@ During the design process of our robot, we faced several engineering challenges,
 Another key learning was the importance of incorporating a differential system. At first, we placed gears of equal size next to each other, but this setup proved ineffective. By integrating a differential, the wheels were able to rotate at different speeds—an essential factor for smooth turning and overall robot performance.
 
 The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printing. This approach provided durability, lightweight construction, and effective protection for the onboard hardware. The design was fully customized by our mechanic to meet the specific needs of our robot.
+## 3D Printer and Filament
+### Bambu Lab P1S
+This is our 3D printer, which we use to produce both prototypes and the final robot chassis. It is capable of high-speed printing without compromising quality or risking failure. The printer features a fully enclosed chamber, allowing safe printing of high-temperature or hazardous materials such as ABS and ASA. It is one of Bambu Lab’s best-selling models.
+
+Additionally, it comes with an Automated Material System (AMS), enabling the printer to handle up to four different materials—whether the same or different types of plastic. The AMS also includes an Auto Reload function, allowing us to print overnight without worrying about filament running out.
+#### Specification
+| Feature                     | Details                                                                 |
+|-----------------------------|-------------------------------------------------------------------------|
+| **Model**                   | P1S Combo                                                                |
+| **Build Volume**            | 256 × 256 × 256 mm³                                                      |
+| **Print Speed**             | Up to 500 mm/s                                                           |
+| **Acceleration**            | Up to 20,000 mm/s²                                                       |
+| **Extruder Type**           | Direct Drive                                                             |
+| **Nozzle Type**             | Stainless Steel (upgradeable to hardened steel)                          |
+| **Hotend Max Temp**         | 280°C (supports high-temp filaments with upgraded nozzle)                |
+| **Heatbed Max Temp**        | 100°C                                                                    |
+| **Enclosure**               | Fully enclosed with carbon filter and fans                               |
+| **Cooling System**          | Auxiliary part cooling fan, chamber regulator fan, control board fan     |
+| **AMS Compatibility**       | Yes (supports up to 16-color multi-material printing)                    |
+| **Connectivity**            | Wi-Fi, USB, Bambu-Bus                                                    |
+| **Display**                 | 2.7-inch 192×64 screen                                                   |
+| **Software**                | Bambu Studio (supports Cura, PrusaSlicer, SuperSlicer)                   |
+| **Camera**                  | Built-in for remote monitoring and time-lapse                             |
+| **Dimensions (WxDxH)**      | 389 × 389 × 458 mm³                                                       |
+| **Weight**                  | 9.5 kg                                                                   |
+| **Power Input**             | 100–240 VAC, 50/60 Hz                                                    |
+| **Max Power Consumption**   | 1000 W @ 220V, 350 W @ 110V                                              |
+
+---
+
+### Polylactic Acid or PLA 
+PLA is the most common type of filament used in 3D printing. It is easy to print, produces minimal stringing, and requires low printing temperatures. However, it has some downsides: it cannot withstand high heat and is relatively brittle. For this reason, we use PLA for very thin parts that support the robot without bending.
+
+### Polyethylene Terephthalate Glycol or PETG 
+PETG is another widely used 3D printing filament. It is flexible, strong, chemically resistant, and can withstand high temperatures. However, it tends to cause more stringing and produces a slightly rougher surface finish compared to PLA. Being impact-resistant, we use PETG for parts that are likely to experience collisions, ensuring the robot remains intact even after hundreds of hits.
+
+---
 
 ## Printed Robot Chassis
-### Bambu Lab P1S
-This is our 3D-Printer. We use this printer to print out both prototype and real chassis. It's capable of printing at high speed without risking the failure. It features and enclosed chamber for printing a hazardant material like ABS and ASA. It's one of the best-seller printer from Bambu Lab. We also have an automated material system, also known as AMS. It helps the robot achive the 
 ### Lower Base
 The lower base serves as the foundation of our robot, supporting nearly all essential components: the controller, motors, steering servo, light sensors, buck converter, and differential.  
  
@@ -88,23 +123,34 @@ It contains 3 main components: servo link, main connector, and wheel bracket. Wh
 
 ## LEGO Technic Parts
 ### Differential
-This differencial comes with a 28 teeth double bevel gear, it's identical to the one we use with our motor. Inside, it's featuring with 5 small gears inside to allows the wheel on the other side rotate freely. This part ensures that the wheel would rotate at the same speed even in the turn.
+This differential includes a 28-tooth double bevel gear, identical to the one used with our motor. Inside, it contains five small gears that allow the opposite wheel to rotate freely. This mechanism ensures that both wheels rotate at the correct speed, even when the robot is turning.
 
 ### Gear
-We selected a 28 tooth double bevel gear to avoid the robot from losing it's speed or torque. It's made of **ABS Plastic** giving it the durability. 
+We selected a 28-tooth double bevel gear to prevent the robot from losing speed or torque. It is made of ABS plastic, providing durability, and matches the size of the differential.
+
+### Wheel: 43.2 * 22
+The wheel is a crucial component of our robot and comes in various sizes and shapes. We selected this size for its ability to maintain grip on the surface during high-speed turns. Its 43.2 diameter also makes the robot easy to control.
 
 ### Pin
+These pins are used to secure the servo to the robot. They act as a lock, ensuring the servo stays firmly in place.
 
 ### Axle
+Axles connect the wheels to the robot. We designed a 5.1 mm hole for the axle, allowing it to sit securely while still rotating freely.
 
-### Axle Connector
+### Half Bush
+This component creates space between the wheel and the robot, ensuring that the wheels can rotate freely without being obstructed during operation.
 
-## Screws
-### M3 Screws
+## Additional
+### Screws
+Screws come in various sizes. We designed our robot primarily using M3 screws, as they are the most common for robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are used.
+#### M3 Screws
 
-### M2.5 Screws
+#### M2.5 Screws
+
+---
 
 ### PCB Support Post
+The support posts connect the first and second floors of the robot. They enhance stability, ensuring that the LiDAR and camera remain steady during operation.
 
 # Hardware Information
 ## Controller
