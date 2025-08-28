@@ -184,13 +184,13 @@ This component creates space between the wheel and the robot, ensuring that the 
 Screws come in various sizes. We designed our robot primarily using M3 screws, as they are the most common for robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are used. 
 
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="400"/>
   <br>
   <b>M3 Countersunk Screws</b>
 </p>
 
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M2.5.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M2.5.png" width="400"/>
   <br>
   <b>M2.5 Screws</b>
 </p>
@@ -199,7 +199,7 @@ Screws come in various sizes. We designed our robot primarily using M3 screws, a
 
 ### PCB Support Post
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="400"/>
 </p>
 The support posts connect the first and second floors of the robot. They enhance stability, ensuring that the LiDAR and camera remain steady during operation.
 
