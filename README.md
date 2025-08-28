@@ -159,7 +159,7 @@ We selected a 28-tooth double bevel gear to prevent the robot from losing speed 
 
 ### Wheel: 43.2 * 22
 <p align="center">
-  <img src="" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/43.2x22%20wheel.png" width="400"/><img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Rim.png" width="400"/>
 </p>
 The wheel is a crucial component of our robot and comes in various sizes and shapes. We selected this size for its ability to maintain grip on the surface during high-speed turns. Its 43.2 diameter also makes the robot easy to control.
 
