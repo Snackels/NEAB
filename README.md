@@ -181,7 +181,7 @@ This component creates space between the wheel and the robot, ensuring that the 
 
 ## Additional
 ### Screws
-Screws come in various sizes. We designed our robot primarily using M3 screws, as they are the most common for robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are used. 
+Screws come in various sizes. We designed our robot primarily around M3 screws, as they are the most common in robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are required. For our build, we mainly use countersunk screws. To accommodate them, we chamfered the M3 screw holes by 1.8 mm, creating the perfect countersunk fit that allows the screws to sit flush and remain neatly hidden.
 
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="400"/>
