@@ -153,7 +153,7 @@ This differential includes a 28-tooth double bevel gear, identical to the one us
 
 ### Gear
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="800"/>
+  <img src="https://raw.githubusercontent.com/Snackels/NEAB/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="800"/>
 </p>
 We selected a 28-tooth double bevel gear to prevent the robot from losing speed or torque. It is made of ABS plastic, providing durability, and matches the size of the differential.
 
