@@ -42,7 +42,7 @@ The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printi
 ## 3D Printer and Filament
 ### Bambu Lab P1S Combo
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/P1S%20Combo.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/P1S%20Combo.png" width="300"/>
 </p>
 This is our 3D printer, which we use to produce both prototypes and the final robot chassis. It is capable of high-speed printing without compromising quality or risking failure. The printer features a fully enclosed chamber, allowing safe printing of high-temperature or hazardous materials such as ABS and ASA. It is one of Bambu Lab’s best-selling models.
 
@@ -74,7 +74,7 @@ Additionally, it comes with an Automated Material System (AMS), enabling the pri
 
 ### Polylactic Acid or PLA 
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/Sunlu%20PLA%2B.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/Sunlu%20PLA%2B.png" width="300"/>
 </p>
 PLA is the most common filament used in 3D printing. It is easy to print, produces minimal stringing, and requires relatively low printing temperatures. However, it also has some drawbacks: it cannot withstand high heat and is more brittle compared to other materials. Because of this, we use PLA for thin parts that need to remain lightweight while still providing support without bending.
 
@@ -82,7 +82,7 @@ For our robot, we selected **Sunlu PLA+ 2.0**, an enhanced version of standard P
 
 ### Polyethylene Terephthalate Glycol or PETG
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/Polylite%20PETG.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/3D%20Printer%20and%20filaments/Polylite%20PETG.png" width="300"/>
 </p> 
 PETG is another popular 3D printing filament, valued for its flexibility, strength, chemical resistance, and ability to withstand higher temperatures than PLA. Its main drawbacks are increased stringing and a slightly rougher surface finish.
 
