@@ -144,33 +144,63 @@ It contains 3 main components: servo link, main connector, and wheel bracket. Wh
 
 ## LEGO Technic Parts
 ### Differential
+<p align="center">
+  <img src="" width="800"/>
+</p>
 This differential includes a 28-tooth double bevel gear, identical to the one used with our motor. Inside, it contains five small gears that allow the opposite wheel to rotate freely. This mechanism ensures that both wheels rotate at the correct speed, even when the robot is turning.
 
 ### Gear
+<p align="center">
+  <img src="" width="800"/>
+</p>
 We selected a 28-tooth double bevel gear to prevent the robot from losing speed or torque. It is made of ABS plastic, providing durability, and matches the size of the differential.
 
 ### Wheel: 43.2 * 22
+<p align="center">
+  <img src="" width="800"/>
+</p>
 The wheel is a crucial component of our robot and comes in various sizes and shapes. We selected this size for its ability to maintain grip on the surface during high-speed turns. Its 43.2 diameter also makes the robot easy to control.
 
 ### Pin
+<p align="center">
+  <img src="" width="800"/>
+</p>
 These pins are used to secure the servo to the robot. They act as a lock, ensuring the servo stays firmly in place.
 
 ### Axle
+<p align="center">
+  <img src="" width="800"/>
+</p>
 Axles connect the wheels to the robot. We designed a 5.1 mm hole for the axle, allowing it to sit securely while still rotating freely.
 
 ### Half Bush
+<p align="center">
+  <img src="" width="800"/>
+</p>
 This component creates space between the wheel and the robot, ensuring that the wheels can rotate freely without being obstructed during operation.
 
 ## Additional
 ### Screws
-Screws come in various sizes. We designed our robot primarily using M3 screws, as they are the most common for robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are used.
-#### M3 Screws
+Screws come in various sizes. We designed our robot primarily using M3 screws, as they are the most common for robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are used. 
 
-#### M2.5 Screws
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="800"/>
+
+  #### M3 Countersunk Screws
+</p>
+
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M2.5.png" width="800"/>
+  
+  #### M2.5 Screws
+</p>
 
 ---
 
 ### PCB Support Post
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="800"/>
+</p>
 The support posts connect the first and second floors of the robot. They enhance stability, ensuring that the LiDAR and camera remain steady during operation.
 
 # Hardware Information
