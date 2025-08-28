@@ -91,6 +91,19 @@ This differencial comes with a 28 teeth double bevel gear, it's identical to the
 ### Gear
 We selected a 28 tooth double bevel gear to avoid the robot from losing it's speed or torque. It's made of **ABS Plastic** giving it the durability. 
 
+### Pin
+
+### Axle
+
+### Axle Connector
+
+## Screws
+### M3 Screws
+
+### M2.5 Screws
+
+### PCB Support Post
+
 # Hardware Information
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
@@ -275,9 +288,14 @@ The 11.1V battery enhances the robot's performance by providing higher voltage, 
 
 ---
 
-### Stepdown 1: HW316E V6.0.1 
+### Stepdown: HW316E V6.0.1 and LM2596
+Stepdown or Buck converter is very essential to power both Raspberry Pi and motor driver. Step-downs act like a power limiter for the battery. In our robot, we uses 2 different step-down due to the size. 
+#### HW316E V6.0.1
+This is the stepdown we use to power motor driver. We set the limit voltage to 10 volts to achive the perfect power for our motor. This stepdown also comes with a display LED to indicate the battery level. It can show both input and the output limit we setted. 
+#### LM2596
+We use this step down for Raspberry Pi. The output limit is set to 5 volts otherwise the Raspberry Pi would get short-circuit. It doesn't come with a screen so we need to use multimeter to measure the output although it isn't necessary since we can use the screen on another step down. The wire must be solder into the circuit. On the output end we use a Type-C wire and then connect to the controller.
 
-### Stepdown 2: LM2596
+---
 
 ### On-Off Switch
 This switch is for cutting the power from the battery to the robot. The regulation states that before starting the robot, the power must be cut off. That's when this switch came in. To use this switch, we solder red wire (Positive pole) to the switch on 1 side for input. Then another solder red wire for output on the opposite side. You can put the black wire (Negative pole) straight into the step down. When the switch is turned on, the power from the battery will direct into stepdowns and then the Raspberry Pi and Driver board.
@@ -285,3 +303,4 @@ This switch is for cutting the power from the battery to the robot. The regulati
 ---
 
 ### Wire Splitter
+We splitted the wire from the battery into 2 wires per pole. For example, the positive pole is splitted into 2 wires and later go on both positive input on each stepdown. 
