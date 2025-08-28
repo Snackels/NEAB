@@ -160,37 +160,37 @@ It consists of three main components: the servo link, main connector, and wheel 
 ## LEGO Technic Parts
 ### Differential
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Differential.png" width="400"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Differential.png" width="300"/>
 </p>
 This differential includes a 28-tooth double bevel gear, identical to the one used with our motor. Inside, it contains five small gears that allow the opposite wheel to rotate freely. This mechanism ensures that both wheels rotate at the correct speed, even when the robot is turning.
 
 ### Gear
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="400"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Motor%20Gear.png" width="300"/>
 </p>
 We selected a 28-tooth double bevel gear to prevent the robot from losing speed or torque. It is made of ABS plastic, providing durability, and matches the size of the differential.
 
 ### Wheel: 43.2 * 22
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/43.2x22%20wheel.png" width="400"/><img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Rim.png" width="400"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/43.2x22%20wheel.png" width="300"/><img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Rim.png" width="400"/>
 </p>
 The wheel is a crucial component of our robot and comes in various sizes and shapes. We selected this size for its ability to maintain grip on the surface during high-speed turns. Its 43.2 diameter also makes the robot easy to control.
 
 ### Pin
 <p align="center">
-  <img src="" width="800"/>
+  <img src="" width="300"/>
 </p>
 These pins are used to secure the servo to the robot. They act as a lock, ensuring the servo stays firmly in place.
 
 ### Axle
 <p align="center">
-  <img src="" width="800"/>
+  <img src="" width="300"/>
 </p>
 Axles connect the wheels to the robot. We designed a 5.1 mm hole for the axle, allowing it to sit securely while still rotating freely.
 
 ### Half Bush
 <p align="center">
-  <img src="" width="800"/>
+  <img src="" width="300"/>
 </p>
 This component creates space between the wheel and the robot, ensuring that the wheels can rotate freely without being obstructed during operation.
 
@@ -199,13 +199,13 @@ This component creates space between the wheel and the robot, ensuring that the 
 Screws come in various sizes. We designed our robot primarily around M3 screws, as they are the most common in robotics. In some cases, such as mounting the Raspberry Pi or LiDAR, M2.5 screws are required. For our build, we mainly use countersunk screws. To accommodate them, we chamfered the M3 screw holes by 1.8 mm, creating the perfect countersunk fit that allows the screws to sit flush and remain neatly hidden.
 
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="400"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="300"/>
   <br>
   <b>M3 Countersunk Screws</b>
 </p>
 
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M2.5.png" width="400"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M2.5.png" width="300"/>
   <br>
   <b>M2.5 Screws</b>
 </p>
