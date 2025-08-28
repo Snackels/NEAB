@@ -185,14 +185,14 @@ Screws come in various sizes. We designed our robot primarily using M3 screws, a
 
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M3%20Countersunk.png" width="800"/>
-
-  #### M3 Countersunk Screws
+  <br>
+  <b>M3 Countersunk Screws</b>
 </p>
 
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/M2.5.png" width="800"/>
-  
-  #### M2.5 Screws
+  <br>
+  <b>M2.5 Screws</b>
 </p>
 
 ---
