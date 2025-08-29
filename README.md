@@ -218,6 +218,19 @@ Screws come in various sizes. We designed our robot primarily around M3 screws, 
 </p>
 The support posts connect the first and second floors of the robot. They enhance stability, ensuring that the LiDAR and camera remain steady during operation.
 
+## Design References
+### Counterbore Technique
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/References/Counterbore.png" width="200"/>
+</p>
+Counterbore and countersunk are two techniques used to make screws sit flush with a surface. A countersunk hole has an angled top, allowing cone-shaped screws to fit neatly inside and create a smooth finish, while a counterbore hole has a flat, widened top so cylindrical screw heads can sit below the surface. In our robot, we use these methods to merge the screw into the structure by chamfering 1.8 mm into the screw hole or creating a 4 mm wide hole with a 2 mm depth. This not only saves space but also gives the robot a cleaner and more professional look.
+
+### Ackerman Steering
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/References/Ackermann_turning.svg.png" width="200"/>
+</p>
+Ackermann steering is a method where the inner wheel turns sharper than the outer wheel when the robot turns. This matches the natural path of the wheels, preventing them from sliding against the ground. It makes the robot easier to control, gives it a tighter turning radius, and reduces friction—just like in real cars and F1 racing.
+
 # Hardware Information
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
