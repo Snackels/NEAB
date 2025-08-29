@@ -111,7 +111,13 @@ The upper base is positioned 3 cm above the lower base and is designed to hold t
 
 To ensure a clean and seamless build, we applied the **counterbore technique** so that screws do not interfere with the lower section. This approach allowed us to hide the screws neatly, giving the chassis a screwless apperance.  
 
-Additionally, the upper base includes a **battery slot** at the back, ensuring secure placement and easy accessibility during operation.  
+Additionally, the upper base includes a **battery slot** at the back, ensuring secure placement and easy accessibility during operation.
+
+### Arduino Nano Riser
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Upper%20Base.png" width="800"/>
+</p>
+Since we are using the Arduino Nano, we needed to find an ideal place to mount it. The perfect location is right on top of the Raspberry Pi, allowing both boards to stay compact and organized. To achieve this, we designed the setup to use the same M2.5 screws that secure the Raspberry Pi. We also carefully accounted for the position of the GPIO pins and all necessary wiring, ensuring that everything fits neatly without interfering with connections.
 
 ### LiDAR Holder
 <p align="center">
@@ -157,6 +163,8 @@ The buck converter comes with a lot of pin under it. This was caused by solderin
 </p>
 It consists of three main components: the servo link, main connector, and wheel bracket. When our mechanic designed this part, careful consideration was given to the steering angle. We applied the Ackermann Steering Principle, a system developed to achieve tighter and more efficient turns. With this method, the inner wheel turns at a sharper angle than the outer wheel—similar to the steering system used in Formula 1 cars. We also ensured that, during turns, the wheels would not collide with the robot’s body.
 
+---
+
 ## LEGO Technic Parts
 ### Differential
 <p align="center">
@@ -193,6 +201,8 @@ Axles connect the wheels to the robot. We designed a 5.1 mm hole for the axle, a
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Half%20Bush.png" width="300"/>
 </p>
 This component creates space between the wheel and the robot, ensuring that the wheels can rotate freely without being obstructed during operation.
+
+---
 
 ## Additional
 ### Screws
@@ -231,6 +241,10 @@ Counterbore and countersunk are two techniques used to make screws sit flush wit
 </p>
 Ackermann steering is a method where the inner wheel turns sharper than the outer wheel when the robot turns. This matches the natural path of the wheels, preventing them from sliding against the ground. It makes the robot easier to control, gives it a tighter turning radius, and reduces friction—just like in real cars and F1 racing.
 
+## Printing Process
+To print this robot, we first use a slicer to generate the ****G-code** for the 3D printer. In our case, we use **Bambu Studio**. A slicer lets us set up a **print profile**, which defines whether the part will be strong, lightweight, or have a smooth surface. Once the profile is set, we check for **overhangs** — parts of the model that **“float”** without support. While printers can handle small overhangs, larger ones require supports. Supports are temporary structures that hold the object during printing and can be removed afterward. There are two main types: **normal supports** and **tree supports**, with tree supports being the most popular because they use less filament and print faster. After preparing everything, we start the print.
+
+Here’s a timelapse of the printing process for some of our parts:
 # Hardware Information
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
@@ -256,22 +270,19 @@ The Raspberry Pi 4 Model B was the first component we selected, and it serves as
 
 ---
 
-### Motor Driver: Raspberry Pi Motor Driving Expansion Board from DFRobot
-Using a Raspberry Pi comes with a problem. It can't control the motor. Even if It can, the max operating power is 5 volts which is not nearly enough for utilizing a motor. That's why we picked this board. It can be placed on top of the existing GPIO pin. The maximum input value is 25 volts, more than enough to power the motor. And it's the perfect choice considering the space it take.
+### Extension Board: Arduino Nano from Princebot
+Using a Raspberry Pi comes with some limitations. Its GPIO pins only provide digital signals, meaning it cannot directly control motors or servos, and it also lacks built-in support for analog readings. To solve this, we use an extension board. The Arduino Nano is a small, fast, and flexible microcontroller, making it an ideal choice. By pairing the Nano with a custom PCB, we can easily drive motors, control servos, and read data from analog sensors. The PCB supports up to 10 volts of battery input, which makes it the perfect fit for our robot components.
 #### Specification
 | Feature | Details |
 |---------|---------|
-| Power Supply Voltage | 6 ~ 25V |
-| Power Interface | DC2.1 jack or 3.5 mm wiring column |
-| Servo Support | 8 × PWM servo interfaces with 3-pin (black, red, blue GVS) standard wiring; servo power can be switched to an external supply |
-| PWM Resolution | 12-bit resolution with adjustable PWM frequency up to 1.6 kHz; configurable push-pull or open-drain output |
-| DC Motor Support | 4 × DC motor interfaces (6–24V) via PH2.0 or screw terminals |
-| Encoder Motor Support | 4 × encoder motor drive interfaces (6–25V) |
-| Compatibility | Works with Raspberry Pi Zero/Zero W/A+/B+/2B/3B/3B+/4B |
-| Interfaces | Reserved camera and DIP display screen ribbon interface |
-| Expansion Ports | 2 × I²C interfaces and 1 × serial interface |
-| I²C Address | 0x60 |
-| Extra Features | Onboard passive buzzer and infrared receiver |
+| Processor | Atmega328 (Arduino Nano) |
+| Input Voltage | 6–10 V (with reverse polarity protection) |
+| Motor Driver | 2 × modules (6–10 V, 1.5 A each) |
+| Sensor Ports | 6 × Analog (JST connectors) |
+| Servo Ports | 6 × Digital (servo compatible) |
+| Buzzer | 1 × Speaker |
+| Switches | 1 × Switch (D12), 1 × Reset switch |
+| Dimensions | 64 mm (W) × 45 mm (H) |
 
 ---
 
@@ -361,18 +372,18 @@ Gyro sensor is a component that enables a robot to determine its orientation and
 ---
 
 ### Reflected Light Sensors: TC-01 from Princebot
-Reflected Light Sensors come in various color. Each color can be used for different surface color. This track has 3 different colors: red, blue, and white. We tried using a single red or blue light, but it doesn't work. So at first we come up with using 2 sensors at the same time. And in the end, we settle on using a single **White light** color. White has an ability to amazingly seperate the red, blue, and white. It's purpose is to count and detect lines. This sensor uses **JST** head as a connector. The connector has 3 wire, red as 3.3 volts, white as data, and black as ground. Each of the wire goes to Raspberry Pi's GPIO pins.
+Reflected Light Sensors come in various color. Each color can be used for different surface color. This track has 3 different colors: red, blue, and white. We tried using a single red or blue light, but it doesn't work. So at first we come up with using 2 sensors at the same time. And in the end, we settle on using a single **White light** color. White has an ability to amazingly seperate the red, blue, and white. It's purpose is to count and detect lines. This sensor uses **JST** head as a connector. Since our extension board also uses JSTs, we can connect the sensor straight to it.
 
 ---
 
 ### Touch Sensor: ZX-Switch from INEX
-This button gives us an easier way to start the robot. Since the controller board doesn't come with switches. So, we found this button that could be attached to the frame outside the board using bolt. It gives us the advantages, when we start the robot we can turn on the switch and then keep the robot on the ground so that it would have time to reset it's gyro and other components. Then we press the switch to start and stop the robot. This can be wired the same as the light sensor.
+This button gives us an easier way to start the robot. Since the controller board doesn't come with switches. So, we found this button that could be attached to the frame outside the board using bolt. It gives us the advantages, when we start the robot we can turn on the switch and then keep the robot on the ground so that it would have time to reset it's gyro and other components. Then we press the switch to start and stop the robot. This sensor required a digital reading. The input would be 0 and 1. 1 being pressed and 0 being nothing. We wired this straight into Raspberry Pi's GPIO pins.
 
 ---
 
 ## Driving and Steering
 ### Motor: GM25-370 from Chihai Motor
-This motor is usually used for a sumo robot due to it's speed and power. We then uses this with our robot because it can help us achive the speed we need to win this competition. And since our robot is very heavy due to the various components, this motor comes in real handy. We uses this motor with the drive motor board to control the speed and the power it uses. The rotating axis is connected to a gear which then transfer the spinning to a differential then the wheels.
+This motor is usually used for a sumo robot due to it's speed and power. We then uses this with our robot because it can help us achive the speed we need to win this competition. And since our robot is very heavy due to the various components, this motor comes in real handy. We uses this motor with extension board to control the speed and the power it uses. The rotating axis is connected to a gear which then transfer the spinning to a differential then the wheels.
 #### Specification
 | Feature                          | Details                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
@@ -387,7 +398,7 @@ This motor is usually used for a sumo robot due to it's speed and power. We then
 ---
 
 ### Servo: Geekservo 360 2KG from ELECFREAKS
-We use this servo to steer the robot. This servo is compatible with LEGO, making it easy and convenient to build the robot by just putting studs in the hole on the side. We like how you can connect two axles to the dual outputs on this servo so you can power two wheels or gears or mount the servo securely inside articulated limbs and other contraptions. Additionally, the gears inside these servos will **slip** when the blocking load is too high instead of jamming, helping avoid damage to our servo and board. It can be connected to servo pin on the motor driver.
+We use this servo to steer the robot. This servo is compatible with LEGO, making it easy and convenient to build the robot by just putting studs in the hole on the side. We like how you can connect two axles to the dual outputs on this servo so you can power two wheels or gears or mount the servo securely inside articulated limbs and other contraptions. Additionally, the gears inside these servos will **slip** when the blocking load is too high instead of jamming, helping avoid damage to our servo and board. It can be connected to servo pin on the extension board.
 #### Specification
 | Feature                 | Details                                    |
 |--------------------------|--------------------------------------------|
@@ -418,7 +429,7 @@ The 11.1V battery enhances the robot's performance by providing higher voltage, 
 ### Stepdown: HW316E V6.0.1 and LM2596
 Stepdown or Buck converter is very essential to power both Raspberry Pi and motor driver. Step-downs act like a power limiter for the battery. In our robot, we uses 2 different step-down due to the size. 
 #### HW316E V6.0.1
-This is the stepdown we use to power motor driver. We set the limit voltage to 10 volts to achive the perfect power for our motor. This stepdown also comes with a display LED to indicate the battery level. It can show both input and the output limit we setted. 
+This is the stepdown we use to power our extension board. We set the limit voltage to 10 volts to achive the perfect power for our motor. This stepdown also comes with a display LED to indicate the battery level. It can show both input and the output limit we setted. 
 #### LM2596
 We use this step down for Raspberry Pi. The output limit is set to 5 volts otherwise the Raspberry Pi would get short-circuit. It doesn't come with a screen so we need to use multimeter to measure the output although it isn't necessary since we can use the screen on another step down. The wire must be solder into the circuit. On the output end we use a Type-C wire and then connect to the controller.
 
