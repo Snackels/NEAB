@@ -178,19 +178,19 @@ The wheel is a crucial component of our robot and comes in various sizes and sha
 
 ### Pin
 <p align="center">
-  <img src="" width="300"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Pins.png" width="300"/>
 </p>
 These pins are used to secure the servo to the robot. They act as a lock, ensuring the servo stays firmly in place.
 
 ### Axle
 <p align="center">
-  <img src="" width="300"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Axles.png" width="300"/>
 </p>
 Axles connect the wheels to the robot. We designed a 5.1 mm hole for the axle, allowing it to sit securely while still rotating freely.
 
 ### Half Bush
 <p align="center">
-  <img src="" width="300"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lego%20Technic/Half%20Bush.png" width="300"/>
 </p>
 This component creates space between the wheel and the robot, ensuring that the wheels can rotate freely without being obstructed during operation.
 
@@ -214,14 +214,14 @@ Screws come in various sizes. We designed our robot primarily around M3 screws, 
 
 ### PCB Support Post
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="200"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Additional/PCB%20Support%20post.png" width="400"/>
 </p>
 The support posts connect the first and second floors of the robot. They enhance stability, ensuring that the LiDAR and camera remain steady during operation.
 
 ## Design References
 ### Counterbore Technique
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/References/Counterbore.png" width="200"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/References/Counterbore.png" width="400"/>
 </p>
 Counterbore and countersunk are two techniques used to make screws sit flush with a surface. A countersunk hole has an angled top, allowing cone-shaped screws to fit neatly inside and create a smooth finish, while a counterbore hole has a flat, widened top so cylindrical screw heads can sit below the surface. In our robot, we use these methods to merge the screw into the structure by chamfering 1.8 mm into the screw hole or creating a 4 mm wide hole with a 2 mm depth. This not only saves space but also gives the robot a cleaner and more professional look.
 
