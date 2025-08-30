@@ -17,11 +17,9 @@ by Team **YBR-NEAB**
 - [About our team](#about-our-team)
 - [Engineering Consideration](#engineering-consideration)
 - [Hardware Information](#hardware-information)
+- [ROS 2 Humble Explanation](#ros-2-humble-explanation)
 - [Raspberry Pi Program](#raspberry-pi-program)
 - [Arduino Program](#arduino-program)
-- [Collecting Data](#collecting-data)
-- [Cleaning Data](#cleaning-data)
-- [Machine Learning](machine-learning)
 - [Contact Us!](#contact)
 
 # **About our team.**
@@ -93,6 +91,7 @@ For our robot, we selected **Polymaker PolyLite PETG**. Polymaker is a trusted b
 ---
 
 ## Printed Robot Chassis
+[All the 3D printable models can be found here](https://github.com/Snackels/NEAB/tree/main/3D%20models).
 ### Lower Base
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Lower%20Base.png" width="800"/>
