@@ -115,7 +115,7 @@ Additionally, the upper base includes a **battery slot** at the back, ensuring s
 
 ### Arduino Nano Riser
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Upper%20Base.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Arduino%20Nano%20Riser.png" width="800"/>
 </p>
 Since we are using the Arduino Nano, we needed to find an ideal place to mount it. The perfect location is right on top of the Raspberry Pi, allowing both boards to stay compact and organized. To achieve this, we designed the setup to use the same M2.5 screws that secure the Raspberry Pi. We also carefully accounted for the position of the GPIO pins and all necessary wiring, ensuring that everything fits neatly without interfering with connections.
 
@@ -129,7 +129,7 @@ The holder also included a **slot for the gyro sensor**, positioned directly ben
 
 ### Camera mount
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Cam%20Mount.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Chassis%20Photos/Camera%20mount.png" width="800"/>
 </p>
 This component serves as a **stand for the camera** and includes protective covers for both the front and top.  
 
@@ -248,25 +248,27 @@ Here’s a timelapse of the printing process for some of our parts:
 # Hardware Information
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
-
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Raspberry%20Pi%204%20ModelB.png" width="800"/>
+</p>
 The Raspberry Pi 4 Model B was the first component we selected, and it serves as the most crucial part of the robot, acting as the brain of the system. Without it, the robot cannot process information or make decisions. The Raspberry Pi is widely used as a controller due to its versatility and accessibility, functioning like a mini computer with 4 USB ports, 40 GPIO pins, and dedicated slots for a camera and monitor. It can be powered via a USB-C connector with an operating voltage of 5 volts. Since we chose ROS2 as the robot’s operating system, the Raspberry Pi 4 was the ideal choice to handle the required computation and communication tasks. And It can be connect with Wi-Fi or LAN cable for communicating with the programming computer.
 #### Specification
 | Feature | Details |
 |---------|---------|
-| Processor | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz |
-| Memory Options | 1GB, 2GB, 4GB or 8GB LPDDR4-3200 SDRAM |
-| Wireless | 2.4 GHz and 5.0 GHz IEEE 802.11ac, Bluetooth 5.0, BLE |
-| Ethernet | Gigabit Ethernet |
-| USB Ports | 2 × USB 3.0, 2 × USB 2.0 |
-| GPIO | 40-pin header (fully backwards compatible) |
-| Display Output | 2 × micro-HDMI® (up to 4kp60), 2-lane MIPI DSI |
-| Camera Interface | 2-lane MIPI CSI port |
-| Audio/Video | 4-pole stereo audio and composite video port |
-| Video Support | H.265 (4kp60 decode), H.264 (1080p60 decode, 1080p30 encode) |
-| Graphics | OpenGL ES 3.1, Vulkan 1.0 |
-| Storage | Micro-SD card slot (OS and data storage) |
-| Power Input | 5V DC via USB-C (min 3A), 5V DC via GPIO (min 3A), Power over Ethernet (PoE with HAT) |
-| Operating Temperature | 0 – 50 °C ambient |
+| **Processor** | Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz |
+| **Memory Options** | 1GB, 2GB, 4GB or 8GB LPDDR4-3200 SDRAM |
+| **Wireless** | 2.4 GHz and 5.0 GHz IEEE 802.11ac, Bluetooth 5.0, BLE |
+| **Ethernet** | Gigabit Ethernet |
+| **USB Ports** | 2 × USB 3.0, 2 × USB 2.0 |
+| **GPIO** | 40-pin header (fully backwards compatible) |
+| **Display Output** | 2 × micro-HDMI® (up to 4kp60), 2-lane MIPI DSI |
+| **Camera Interface** | 2-lane MIPI CSI port |
+| **Audio/Video** | 4-pole stereo audio and composite video port |
+| **Video Support** | H.265 (4kp60 decode), H.264 (1080p60 decode, 1080p30 encode) |
+| **Graphics** | OpenGL ES 3.1, Vulkan 1.0 |
+| **Storage** | Micro-SD card slot (OS and data storage) |
+| **Power Input** | 5V DC via USB-C (min 3A), 5V DC via GPIO (min 3A), Power over Ethernet (PoE with HAT) |
+| **Operating Temperature** | 0 – 50 °C ambient |
 
 ---
 
@@ -275,14 +277,14 @@ Using a Raspberry Pi comes with some limitations. Its GPIO pins only provide dig
 #### Specification
 | Feature | Details |
 |---------|---------|
-| Processor | Atmega328 (Arduino Nano) |
-| Input Voltage | 6–10 V (with reverse polarity protection) |
-| Motor Driver | 2 × modules (6–10 V, 1.5 A each) |
-| Sensor Ports | 6 × Analog (JST connectors) |
-| Servo Ports | 6 × Digital (servo compatible) |
-| Buzzer | 1 × Speaker |
-| Switches | 1 × Switch (D12), 1 × Reset switch |
-| Dimensions | 64 mm (W) × 45 mm (H) |
+| **Processor** | Atmega328 (Arduino Nano) |
+| **Input Voltage** | 6–10 V (with reverse polarity protection) |
+| **Motor Driver** | 2 × modules (6–10 V, 1.5 A each) |
+| **Sensor Ports** | 6 × Analog (JST connectors) |
+| **Servo Ports** | 6 × Digital (servo compatible) |
+| **Buzzer** | 1 × Speaker |
+| **Switches** | 1 × Switch (D12), 1 × Reset switch |
+| **Dimensions** | 64 mm (W) × 45 mm (H) |
 
 ---
 
@@ -325,7 +327,7 @@ This component is very important for avoiding obstacle. It can detect red and gr
 
 ---
 
-### Gyro Sensor: BNO055 from DFRobot
+### Gyro Sensor: SEN-0253 from DFRobot
 Gyro sensor is a component that enables a robot to determine its orientation and turn in the appropriate direction. The gyro sensors detect 3 axis: yaw, pitch, and roll. We chose this gyro sensor specifically because of how effective it is. It collaborate with LiDAR and camera to ensure that the robot would not steer of it's course when it's turning to avoid the obstacle. And it also helps when the robot initiate the parking. It helps the robot make sure that it is turning toward the right direction. The gyro uses I2C wiring. The I2C features 4 different wire: SDA, SCL, 5 volts, and Ground. The wires go onto the GPIO pins on Raspberry Pi.
 #### Specification
 | Feature                          | Details                                                                 |
