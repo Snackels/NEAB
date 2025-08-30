@@ -16,6 +16,7 @@ by Team **YBR-NEAB**
 ### This Github repository contains:
 - [About our team](#about-our-team)
 - [Engineering Consideration](#engineering-consideration)
+- [Chassis Design](#chassis-design)
 - [Hardware Information](#hardware-information)
 - [ROS 2 Humble Explanation](#ros-2-humble-explanation)
 - [Raspberry Pi Program](#raspberry-pi-program)
@@ -37,6 +38,8 @@ During the design process of our robot, we faced several engineering challenges,
 Another key learning was the importance of incorporating a differential system. At first, we placed gears of equal size next to each other, but this setup proved ineffective. By integrating a differential, the wheels were able to rotate at different speeds—an essential factor for smooth turning and overall robot performance.
 
 The robot chassis was modeled in Fusion 360 and manufactured using FDM 3D printing. This approach provided durability, lightweight construction, and effective protection for the onboard hardware. The design was fully customized by our mechanic to meet the specific needs of our robot.
+
+# Chassis Design
 ## 3D Printer and Filament
 ### Bambu Lab P1S Combo
 <p align="center">
