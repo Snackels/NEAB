@@ -28,7 +28,7 @@ by Team **YBR-NEAB**
 Our team consists of three members, each assigned a different role:
 
 1. Vichaiwat Koonsap – I am responsible for gathering data for our team members and taking detailed notes, which are then compiled into this documentation.
-2. Norapat Kaset – Norapat is responsible for designing and building our robot.
+2. Norrapat Kesthong – Norapat is responsible for designing and building our robot.
 3. Vorawet Narkglom – Vorawet is the programmer who coded the robot.   
 
 # **Engineering Consideration.**
