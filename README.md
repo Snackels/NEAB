@@ -259,9 +259,10 @@ This is what our robot looks like with all the chassis part combined.
 ## Controller
 ### Main controller:  Raspberry Pi 4 Model B from Raspberry Pi
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Raspberry%20Pi%204%20ModelB.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Raspberry%20Pi%204%20ModelB.png" width="500"/>
 </p>
 The Raspberry Pi 4 Model B was the first component we selected, and it serves as the most crucial part of the robot, acting as the brain of the system. Without it, the robot cannot process information or make decisions. The Raspberry Pi is widely used as a controller due to its versatility and accessibility, functioning like a mini computer with 4 USB ports, 40 GPIO pins, and dedicated slots for a camera and monitor. It can be powered via a USB-C connector with an operating voltage of 5 volts. Since we chose ROS2 as the robot’s operating system, the Raspberry Pi 4 was the ideal choice to handle the required computation and communication tasks. And It can be connect with Wi-Fi or LAN cable for communicating with the programming computer.
+
 #### Specification
 | Feature | Details |
 |---------|---------|
@@ -284,9 +285,10 @@ The Raspberry Pi 4 Model B was the first component we selected, and it serves as
 
 ### Extension Board: Arduino Nano from Princebot
 <p align="center">
-  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Arduino%20Nano.png" width="800"/>
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Arduino%20Nano.png" width="500"/>
 </p>
 Using a Raspberry Pi comes with some limitations. Its GPIO pins only provide digital signals, meaning it cannot directly control motors or servos, and it also lacks built-in support for analog readings. To solve this, we use an extension board. The Arduino Nano is a small, fast, and flexible microcontroller, making it an ideal choice. By pairing the Nano with a custom PCB, we can easily drive motors, control servos, and read data from analog sensors. The PCB supports up to 10 volts of battery input, which makes it the perfect fit for our robot components.
+
 #### Specification
 | Feature | Details |
 |---------|---------|
@@ -307,6 +309,7 @@ Using a Raspberry Pi comes with some limitations. Its GPIO pins only provide dig
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/RP%20LiDAR%20C1.png" width="800"/>
 </p>
 This is a LiDAR, a device that emitted light toward the surface and then measure the time it take to bounce back. Most of the car uses it for parking. This part plays a crucial role in this competition, by measuring the distance between the inner and outer wall then divide by 2 so that the robot would stay in the perfect middle. And it also plays a significant role in parking sequence due to it's ability to view 360 degree. We can connect the LiDAR with the USB port on Raspberry Pi, making it very user friendly.
+
 #### Specification
 | Feature                     | Details                                                                 |
 |------------------------------|-------------------------------------------------------------------------|
@@ -332,6 +335,7 @@ This is a LiDAR, a device that emitted light toward the surface and then measure
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/HBV-1716WA.png" width="800"/>
 </p>
 This component is very important for avoiding obstacle. It can detect red and green obstacle from distance to avoid crashing into it. It can co-operate with the LiDAR to ensure the maximum efficiency when the robot turns to avoid the block. This camera doesn't have it's own micro-controller meaning that it can achive it's full **frame per sec** performance. And it can also be connect to Raspberry Pi through USB port.
+
 #### Specification
 | Feature                | Details                                                                 |
 |-------------------------|-------------------------------------------------------------------------|
@@ -351,6 +355,7 @@ This component is very important for avoiding obstacle. It can detect red and gr
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/SEN0253.png" width="800"/>
 </p>
 Gyro sensor is a component that enables a robot to determine its orientation and turn in the appropriate direction. The gyro sensors detect 3 axis: yaw, pitch, and roll. We chose this gyro sensor specifically because of how effective it is. It collaborate with LiDAR and camera to ensure that the robot would not steer of it's course when it's turning to avoid the obstacle. And it also helps when the robot initiate the parking. It helps the robot make sure that it is turning toward the right direction. The gyro uses I2C wiring. The I2C features 4 different wire: SDA, SCL, 5 volts, and Ground. The wires go onto the GPIO pins on Raspberry Pi.
+
 #### Specification
 | Feature                          | Details                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
@@ -417,6 +422,7 @@ This button gives us an easier way to start the robot. Since the controller boar
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Gm-25.png" width="800"/>
 </p>
 This motor is usually used for a sumo robot due to it's speed and power. We then uses this with our robot because it can help us achive the speed we need to win this competition. And since our robot is very heavy due to the various components, this motor comes in real handy. We uses this motor with extension board to control the speed and the power it uses. The rotating axis is connected to a gear which then transfer the spinning to a differential then the wheels.
+
 #### Specification
 | Feature                          | Details                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
@@ -435,6 +441,7 @@ This motor is usually used for a sumo robot due to it's speed and power. We then
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/GEEKSERVO%202kg%20360%20Degrees%20servo..png" width="800"/>
 </p>
 We use this servo to steer the robot. This servo is compatible with LEGO, making it easy and convenient to build the robot by just putting studs in the hole on the side. We like how you can connect two axles to the dual outputs on this servo so you can power two wheels or gears or mount the servo securely inside articulated limbs and other contraptions. Additionally, the gears inside these servos will **slip** when the blocking load is too high instead of jamming, helping avoid damage to our servo and board. It can be connected to servo pin on the extension board.
+
 #### Specification
 | Feature                 | Details                                    |
 |--------------------------|--------------------------------------------|
@@ -454,6 +461,7 @@ We use this servo to steer the robot. This servo is compatible with LEGO, making
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Firefox%201300mah%2011.1v%203cell.png" width="800"/>
 </p>
 The 11.1V battery enhances the robot's performance by providing higher voltage, which reduces current draw and minimizes power losses during our sessions. This battery ensures stable and continuous functionality without significant voltage drops, even under high current loads, a critical factor during intense practice sessions and competitions. The battery has 1300 mah which is enough to power all of our components. We also uses 2 step down for our robot which will be mentioned later on.
+
 #### Specification
 | Feature               | Details                                   |
 |-----------------------|-------------------------------------------|
