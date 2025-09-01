@@ -551,7 +551,7 @@ The Future Engineers category challenges the competitors to design autonomous ro
 - Stability (LTS) – Reliable platform during multi-year competition cycles.
 - Wide hardware support – Works well with microcontrollers (via ROS 2 Micro-ROS), Raspberry Pi, and AI boards.
 - Future-proof – We can reuse the same codebase and extend it each season.
-- ndustry alignment – Skills learned transfer directly to robotics and automation fields.
+- Industry alignment – Skills learned transfer directly to robotics and automation fields.
 
 ## Typical ROS 2 Workflow for a WRO Robot
 
