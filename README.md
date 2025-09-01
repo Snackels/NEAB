@@ -508,6 +508,14 @@ This switch is for cutting the power from the battery to the robot. The regulati
 </p>
 To power both the Raspberry Pi and Arduino Nano, we use a wire splitter to divide the battery connection into two wires per pole. For example, the positive pole is split into two separate wires, each directed to the positive input of its own step-down converter. The same is done for the negative pole. This ensures that both boards receive stable and isolated power from the same battery source.
 
+## Full Robot Assembly
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Robot%20Photos/Robot.png" width="500"/>
+</p>
+This is the real photo of our robot. It cosists of every component we listed.
+
+---
+
 # ROS 2 Humble Explanation
 In this competition, there are multiple approaches we could use, such as machine learning, ROS, or writing plain code directly on an Arduino board. Since our LiDAR only supports Raspberry Pi, we chose ROS because of its strong ability to handle navigation and decision-making.
 
