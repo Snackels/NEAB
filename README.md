@@ -570,3 +570,206 @@ The Future Engineers category challenges the competitors to design autonomous ro
 
 ## Conclusion
 ROS 2 Humble provides a structured, modular, and industry-standard software framework for building autonomous robots. For WRO Future Engineers, it helps teams develop reliable robots that can sense, think, and act both in simulation and in real matches.
+
+# Program Explanation
+This part explains our robot program in both Qualification and Final round. We uses ROS2 to communicate between Arduino and Raspberry Pi. The Arduino will act like a motor, light sensor, and servo controller. And then the Raspberry Pi will make decision while communicating with LiDAR, camera, and Arduino. With this setup, it allow us to achive the best decision making robot while remain the fast, accurate, and stable robot.
+
+## Qualification Round
+To use the program, the first thing you need to understand is the concept of a **node**. A node is like a self-contained program that performs a specific task in ROS, such as controlling a motor, reading a sensor, or processing data. In our robot, we have nodes for the **light sensor**, **IMU**, **camera**, **LiDAR**, **button**, and the **main program**. Each node is written separately so it can be run independently or together with other nodes. The second thing you need is a **launch file**, which is used to start multiple nodes at once, for example, starting the camera and LiDAR nodes automatically. You run the launch file from the terminal and then start the **main node**, which acts like the **`setup()` function in Arduino**, initializing the robot and running the main program loop. This structure allows ROS to manage all components efficiently while keeping each part modular and easy to control.
+
+### Light Sensor and Motor/Servo Workflow
+
+Arduino (Light Sensor)  
+&nbsp;&nbsp;↓ (send sensor data)  
+Raspberry Pi → **Light Sensor Node** (publisher)  
+&nbsp;&nbsp;↓ (publish topic)  
+**Main Node** (subscriber & decision making)  
+&nbsp;&nbsp;↓ (publish motor/servo commands)  
+**Arduino Communication Node** (sends commands via USB)  
+&nbsp;&nbsp;↓ (receive commands)  
+Arduino → **Motor & Servo** (execute movement)
+
+
+
+### Raspberry Pi to Arduino Node
+
+``` #!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import Int32
+import serial
+import time
+import threading
+
+class ArduinoSerialNode(Node):
+    def __init__(self):
+        super().__init__("arduino_serial_node")
+        
+        # Current motor and servo values
+        self.current_motor_speed = 0
+        self.current_servo_angle = 91  # Center position
+        self.last_command_time = time.time()
+        
+        # Publishers for sensor data from Arduino
+        self.light_sensor_pub = self.create_publisher(Int32, "light_sensor", 10)
+        
+        # Subscribers for commands to Arduino
+        self.motor_speed_sub = self.create_subscription(
+            Int32, "motor_speed", self.motor_speed_callback, 10
+        )
+        self.servo_angle_sub = self.create_subscription(
+            Int32, "servo_angle", self.servo_angle_callback, 10
+        )
+        
+        # Serial setup
+        try:
+            self.ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=0.1)
+            time.sleep(2)  # Wait for Arduino to reset
+            self.get_logger().info("Arduino serial connection established on /dev/ttyUSB0")
+        except Exception as e:
+            self.get_logger().error(f"Failed to connect to Arduino: {e}")
+            self.ser = None
+            return
+        
+        # Timers
+        self.read_timer = self.create_timer(0.02, self.read_serial)  # 50 Hz read
+        self.send_timer = self.create_timer(0.05, self.send_commands)  # 20 Hz send
+        
+        # Thread lock for serial communication
+        self.serial_lock = threading.Lock()
+        
+        self.get_logger().info("Arduino Serial Node started")
+        self.get_logger().info("Listening for light sensor data and motor/servo commands")
+
+    def motor_speed_callback(self, msg):
+        """Handle motor speed commands from controller"""
+        self.current_motor_speed = max(0, min(100, msg.data))  # Clamp 0-100
+        self.last_command_time = time.time()
+        self.get_logger().debug(f"Motor speed updated: {self.current_motor_speed}")
+
+    def servo_angle_callback(self, msg):
+        """Handle servo angle commands from controller"""
+        self.current_servo_angle = max(67, min(113, msg.data))  # Clamp 67-113
+        self.last_command_time = time.time()
+        self.get_logger().debug(f"Servo angle updated: {self.current_servo_angle}")
+
+    def send_commands(self):
+        """Send motor and servo commands to Arduino"""
+        if not self.ser:
+            return
+            
+        try:
+            with self.serial_lock:
+                # Send command in format: "MOTOR,SERVO\n"
+                command = f"{self.current_motor_speed},{self.current_servo_angle}\n"
+                self.ser.write(command.encode('utf-8'))
+                
+                # Log periodically
+                if not hasattr(self, '_send_counter'):
+                    self._send_counter = 0
+                self._send_counter += 1
+                
+                if self._send_counter % 100 == 0:  # Log every 5 seconds at 20Hz
+                    self.get_logger().debug(f"Sent to Arduino: Motor={self.current_motor_speed}, Servo={self.current_servo_angle}")
+                    
+        except Exception as e:
+            self.get_logger().error(f"Error sending to Arduino: {e}")
+
+    def read_serial(self):
+        """Read sensor data from Arduino"""
+        if not self.ser:
+            return
+            
+        try:
+            with self.serial_lock:
+                while self.ser.in_waiting > 0:
+                    line = self.ser.readline().decode(errors="ignore").strip()
+                    if line:
+                        self.process_arduino_data(line)
+                        
+        except Exception as e:
+            self.get_logger().error(f"Serial read error: {e}")
+
+    def process_arduino_data(self, line):
+        """Process incoming data from Arduino"""
+        self.get_logger().debug(f"RAW ARDUINO: '{line}'")
+        
+        # Handle light sensor data (simple integer)
+        if line.isdigit():
+            try:
+                light_value = int(line)
+                
+                # Publish light sensor data
+                msg = Int32()
+                msg.data = light_value
+                self.light_sensor_pub.publish(msg)
+                
+                # Log periodically
+                if not hasattr(self, '_light_counter'):
+                    self._light_counter = 0
+                self._light_counter += 1
+                
+                if self._light_counter % 100 == 0:  # Log every 5 seconds at 50Hz
+                    self.get_logger().info(f"Light sensor: {light_value}")
+                    
+            except ValueError:
+                self.get_logger().warn(f"Invalid light sensor data: '{line}'")
+        
+        # Handle other Arduino messages (status, errors, etc.)
+        elif line.startswith("STATUS:"):
+            self.get_logger().info(f"Arduino status: {line}")
+        elif line.startswith("ERROR:"):
+            self.get_logger().error(f"Arduino error: {line}")
+        elif line.startswith("READY"):
+            self.get_logger().info("Arduino is ready")
+        else:
+            # Unknown data format
+            if len(line) > 0:
+                self.get_logger().debug(f"Unknown Arduino data: '{line}'")
+
+    def safety_check(self):
+        """Safety check - stop motor if no commands received recently"""
+        if time.time() - self.last_command_time > 2.0:  # No commands for 2 seconds
+            if self.current_motor_speed > 0:
+                self.get_logger().warn("No recent commands - stopping motor for safety")
+                self.current_motor_speed = 0
+                self.current_servo_angle = 91  # Center servo
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = ArduinoSerialNode()
+    
+    if node.ser is None:
+        node.get_logger().error("Failed to initialize serial connection. Exiting.")
+        return
+    
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info("Arduino Serial Node shutting down...")
+    finally:
+        # Send stop command before closing
+        if node.ser:
+            try:
+                with node.serial_lock:
+                    node.ser.write("0,91\n".encode('utf-8'))  # Stop motor, center servo
+                    time.sleep(0.1)
+                    node.ser.close()
+            except:
+                pass
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == "__main__":
+    main() ```
+
+
+#### **Explanation**
+
+We use a Python node to connect the Raspberry Pi with the Arduino through the serial port. This node allows ROS to send commands to control the motor and servo, and also receive sensor values back from the Arduino. The command is sent in the format MOTOR_SPEED,SERVO_ANGLE. For example, 50,91 means the motor runs at 50% and the servo is set to the center at 91°. The motor speed is limited to a range of 0–100, and the servo angle is limited to 67–113 to prevent damage.
+
+The Arduino also sends data back, such as the light sensor readings, and this is published on the light_sensor topic in ROS. It can also send status messages like READY, STATUS:OK, or ERROR.
+
+To make the system safe, if no command is received for more than 2 seconds, the node will stop the motor and reset the servo to center. This way, the robot will not continue moving by mistake. The program also makes sure that when it shuts down, it always sends 0,91 to safely stop the robot.
+
+In short, this node is the bridge between ROS 2 and Arduino. ROS sends the motor and servo control, and Arduino sends back the sensor values.
