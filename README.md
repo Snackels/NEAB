@@ -24,12 +24,14 @@ by Team **YBR-NEAB**
 - [Contact Us!](#contact)
 
 # **About our team.**
-
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Team%20Photos/YBR-NEAB.png" width="400"/>
+</p>
 Our team consists of three members, each assigned a different role:
 
-1. Vichaiwat Koonsap – I am responsible for gathering data for our team members and taking detailed notes, which are then compiled into this documentation.
-2. Norrapat Kesthong – Norrapat is responsible for designing and building our robot.
-3. Vorawet Narkglom – Vorawet is the programmer who coded the robot.   
+1. Vichaiwat Koonsap – I am responsible for gathering data for our team members and taking detailed notes, which are then compiled into this documentation. I'm the on the middle.
+2. Norrapat Kesthong – Norrapat is responsible for designing and building our robot. He's on the right side.
+3. Vorawet Narkglom – Vorawet is the programmer who coded the robot. He stands on the left side.
 
 # **Engineering Consideration.**
 
@@ -111,7 +113,7 @@ To secure the LEGO axle, we designed support poles at the back of the base to ho
 </p>
 The upper base is positioned 3 cm above the lower base and is designed to hold the remaining components while providing additional stability to the robot.  
 
-To ensure a clean and seamless build, we applied the **counterbore technique** so that screws do not interfere with the lower section. This approach allowed us to hide the screws neatly, giving the chassis a screwless apperance.  
+To ensure a clean and seamless build, we applied the **counterbore technique** so that screws do not interfere with the lower section. This approach allowed us to hide the screws neatly, giving the chassis a screwless appearance.  
 
 Additionally, the upper base includes a **battery slot** at the back, ensuring secure placement and easy accessibility during operation.
 
@@ -505,3 +507,5 @@ This switch is for cutting the power from the battery to the robot. The regulati
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Component%20Photos/Wire%20Splitter.png" width="500"/>
 </p>
 To power both the Raspberry Pi and Arduino Nano, we use a wire splitter to divide the battery connection into two wires per pole. For example, the positive pole is split into two separate wires, each directed to the positive input of its own step-down converter. The same is done for the negative pole. This ensures that both boards receive stable and isolated power from the same battery source.
+
+# ROS 2 Humble Explanation
