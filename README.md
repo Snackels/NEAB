@@ -512,7 +512,7 @@ To power both the Raspberry Pi and Arduino Nano, we use a wire splitter to divid
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Robot%20Photos/Robot.png" width="500"/>
 </p>
-This is the real photo of our robot. It cosists of every component we listed.
+This is the real photo of our robot. It consists of every component we listed.
 
 ---
 
