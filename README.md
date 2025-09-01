@@ -574,7 +574,6 @@ ROS 2 Humble provides a structured, modular, and industry-standard software fram
 # Program Explanation
 This part explains our robot program in both Qualification and Final round. We uses ROS2 to communicate between Arduino and Raspberry Pi. The Arduino will act like a motor, light sensor, and servo controller. And then the Raspberry Pi will make decision while communicating with LiDAR, camera, and Arduino. With this setup, it allow us to achive the best decision making robot while remain the fast, accurate, and stable robot.
 
-## Qualification Round
 To use the program, the first thing you need to understand is the concept of a **node**. A node is like a self-contained program that performs a specific task in ROS, such as controlling a motor, reading a sensor, or processing data. In our robot, we have nodes for the **light sensor**, **IMU**, **camera**, **LiDAR**, **button**, and the **main program**. Each node is written separately so it can be run independently or together with other nodes. The second thing you need is a **launch file**, which is used to start multiple nodes at once, for example, starting the camera and LiDAR nodes automatically. You run the launch file from the terminal and then start the **main node**, which acts like the **`setup()` function in Arduino**, initializing the robot and running the main program loop. This structure allows ROS to manage all components efficiently while keeping each part modular and easy to control.
 
 ### Light Sensor and Motor/Servo Workflow
@@ -592,7 +591,7 @@ Arduino → **Motor & Servo** (execute movement)
 
 
 ### Raspberry Pi to Arduino Node
-
+This is the main node used to communicate between Pi and Arduino via USB port.
 ```python
 #!/usr/bin/env python3
 import rclpy
@@ -743,6 +742,8 @@ The Arduino also sends data back to ROS, such as light sensor readings, which ar
 To ensure safety, if no command is received for more than 2 seconds, the node will stop the motor and reset the servo to the center position. This prevents the robot from continuing to move unintentionally. The program also ensures that when it shuts down, it always sends `0,91` to safely stop the robot.
 
 In short, this Python node acts as a bridge between ROS 2 and the Arduino. ROS sends motor and servo commands, while the Arduino sends sensor values and status messages back to ROS, allowing the robot to operate safely and reliably.
+
+## Qualification Round
 
 ### Main Program (C++)
 ```C++
