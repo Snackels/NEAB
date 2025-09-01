@@ -932,46 +932,45 @@ If the command is invalid, the function sends an error message back over serial 
 
 **This is the workflow**
 
-
+```
 +-----------------------------+
 | ROS (motor & servo command) |
 +-------------+---------------+
-              |
-              ▼
-     +-----------------+
-     | Serial port (USB)|
-     +--------+--------+
-              |
-              ▼
-     +-------------------+
-     | readROSCommands() |
-     +--------+----------+
-              |
-              | - Checks if serial data is available
-              | - Reads line until '\n' and trims whitespace
-              | - Splits command into motor speed & servo angle
-              | - Validates motor (0-100) and servo (67-113)
-              ▼
-          +--------+
-          | Valid? |
-          +---+----+
-              |
-      +-------+-------+
-      |               |
-      ▼               ▼
-  Yes /               \ No
-      |                +--------------------------+
-      ▼                | Sends error message via |
-Updates currentMotorSpeed & currentServoAngle      | serial                   |
-      |                +--------------------------+
-      ▼
+|
+▼
++-----------------+
+| Serial port (USB)|
++--------+--------+
+|
+▼
++-------------------+
+| readROSCommands() |
++--------+----------+
+|
+| - Checks if serial data is available
+| - Reads line until '\n' and trims whitespace
+| - Splits command into motor speed & servo angle
+| - Validates motor (0-100) and servo (67-113)
+▼
++--------+
+| Valid? |
++---+----+
+|
++-------+-------+
+| |
+▼ ▼
+Yes No
+| |
+▼ ▼
+Updates currentMotorSpeed & currentServoAngle
+|
+▼
 +------------------------+
-| applyMotorCommands()   |
+| applyMotorCommands() |
 | Sends signals to motor |
-| & servo                |
+| & servo |
 +------------------------+
-
-
+```
 
 ##### **void applyMotorCommands**
 ```c++
