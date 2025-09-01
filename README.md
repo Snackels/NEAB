@@ -509,3 +509,56 @@ This switch is for cutting the power from the battery to the robot. The regulati
 To power both the Raspberry Pi and Arduino Nano, we use a wire splitter to divide the battery connection into two wires per pole. For example, the positive pole is split into two separate wires, each directed to the positive input of its own step-down converter. The same is done for the negative pole. This ensures that both boards receive stable and isolated power from the same battery source.
 
 # ROS 2 Humble Explanation
+In this competition, there are multiple approaches we could use, such as machine learning, ROS, or writing plain code directly on an Arduino board. Since our LiDAR only supports Raspberry Pi, we chose ROS because of its strong ability to handle navigation and decision-making.
+
+There are two generations of ROS:
+
+- **ROS 1 (2010–2025)**
+The original Robot Operating System. Its final release, ROS Noetic Ninjemys (2020), will be supported until 2025. After that, it will no longer receive updates, making it unsuitable for long-term projects or competitions.
+- **ROS 2 (2017–present)**
+
+The next generation of ROS, designed to overcome ROS 1’s limitations. It adds real-time support, improved communication via DDS middleware, stronger security, and better support for multi-robot systems. ROS 2 is still actively developed with multiple distributions. 
+
+We selected ROS 2 Humble because it is stable, reliable, and has a large support community—perfect for our competition project.
+
+## What is **ROS 2 Humble**?
+
+ROS 2 (Robot Operating System 2) is an open-source framework for building and running robot applications. It provides libraries, tools, and conventions to make developing complex robotic systems easier.
+
+The Humble Hawksbill release, commonly called ROS 2 Humble, is a Long-Term Support (LTS) version released in May 2022, with updates and security patches maintained until May 2027.
+
+Because it is stable and reliable, ROS 2 Humble is widely used in education, research, and industry—making it an ideal choice for long-term projects such as WRO competitions.
+
+## Why **ROS 2 Humble**?
+
+The Future Engineers category challenges the competitors to design autonomous robots that can navigate, sense, and make decisions. ROS 2 is a strong fit because:
+- Modular design – Breaks robot software into nodes that can handle tasks like motor control, camera vision, and sensor fusion separately.
+-Communication system – Uses topics, services, and actions for real-time data exchange between nodes, which is essential for autonomous navigation.
+- Hardware flexibility – Works on Raspberry Pi, NVIDIA Jetson, or PCs, and supports many sensors and actuators.
+- Simulation tools – Integrates with Gazebo and RViz to test algorithms before deploying on the physical robot.
+- Community & libraries – Many open-source packages (SLAM, navigation, vision, etc.) are available, which saves development time.
+
+## Key Concepts of **ROS 2 Humble**
+
+- Node – A single program that performs a specific task (e.g., controlling a motor, processing camera images).
+- Topic – A channel where nodes publish and subscribe to share data (e.g., /camera/image_raw).
+- Service – A request/response interaction (e.g., “start motor” or “get distance”).
+- Action – Handles longer tasks that can provide feedback and be canceled (e.g., navigation goals).
+- Package – A collection of nodes, configuration files, and launch files grouped as one project module.
+
+## Advantages of Using Humble in Competitions
+
+- Stability (LTS) – Reliable platform during multi-year competition cycles.
+- Wide hardware support – Works well with microcontrollers (via ROS 2 Micro-ROS), Raspberry Pi, and AI boards.
+- Future-proof – We can reuse the same codebase and extend it each season.
+- ndustry alignment – Skills learned transfer directly to robotics and automation fields.
+
+## Typical ROS 2 Workflow for a WRO Robot
+
+- Perception – Use a camera or sensors → ROS 2 node processes the data.
+- Planning – Navigation stack or custom algorithm decides how to move.
+- Control – Motor controller node executes wheel commands.
+- Testing – Upload the written program to the robot.
+
+## Conclusion
+ROS 2 Humble provides a structured, modular, and industry-standard software framework for building autonomous robots. For WRO Future Engineers, it helps teams develop reliable robots that can sense, think, and act both in simulation and in real matches.
