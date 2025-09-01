@@ -743,3 +743,250 @@ The Arduino also sends data back to ROS, such as light sensor readings, which ar
 To ensure safety, if no command is received for more than 2 seconds, the node will stop the motor and reset the servo to the center position. This prevents the robot from continuing to move unintentionally. The program also ensures that when it shuts down, it always sends `0,91` to safely stop the robot.
 
 In short, this Python node acts as a bridge between ROS 2 and the Arduino. ROS sends motor and servo commands, while the Arduino sends sensor values and status messages back to ROS, allowing the robot to operate safely and reliably.
+
+### Main Program (C++)
+```C++
+#include <Servo.h>
+
+// Motor pins (single motor)
+#define motor1A 5
+#define motor1B 6
+
+// Servo setup
+Servo servo;
+const int Steering_Servo = 2;
+
+// Light sensor
+const int sensorPin = A7;
+int sensorValue = 0;
+
+// Servo limits
+const int servoRight = 113;
+const int servoLeft = 67;
+const int servoMiddle = 91;
+
+// Motor control variables
+int currentMotorSpeed = 0;
+int currentServoAngle = servoMiddle;
+
+// Timing
+unsigned long lastSensorRead = 0;
+unsigned long lastCommandTime = 0;
+const unsigned long COMMAND_TIMEOUT = 1000; // 1 second timeout
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Initialize motor pins (single motor)
+  pinMode(motor1A, OUTPUT);
+  pinMode(motor1B, OUTPUT);
+  
+  // Initialize servo
+  servo.attach(Steering_Servo, 500, 2500);
+  servo.write(servoMiddle);
+  
+  // Stop motor initially
+  motor(1, 0);
+  
+  Serial.println("READY");
+  delay(100);
+}
+
+void loop() {
+  // 1. READ COMMANDS from ROS
+  readROSCommands();
+  
+  // 2. SEND LIGHT SENSOR DATA to ROS (every 20ms = 50Hz)
+  if (millis() - lastSensorRead >= 20) {
+    sensorValue = analogRead(sensorPin);
+    Serial.println(sensorValue);
+    lastSensorRead = millis();
+  }
+  
+  // 3. SAFETY CHECK - stop if no commands received
+  if (millis() - lastCommandTime > COMMAND_TIMEOUT && currentMotorSpeed > 0) {
+    Serial.println("ERROR: Command timeout - stopping motor");
+    currentMotorSpeed = 0;
+    currentServoAngle = servoMiddle;
+    applyMotorCommands();
+  }
+  
+  delay(5);
+}
+
+void readROSCommands() {
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+    
+    // Parse "motor_speed,servo_angle" format
+    int commaIndex = command.indexOf(',');
+    if (commaIndex > 0) {
+      int motorSpeed = command.substring(0, commaIndex).toInt();
+      int servoAngle = command.substring(commaIndex + 1).toInt();
+      
+      // Validate and apply commands
+      if (motorSpeed >= 0 && motorSpeed <= 100 && 
+          servoAngle >= servoLeft && servoAngle <= servoRight) {
+        
+        currentMotorSpeed = motorSpeed;
+        currentServoAngle = servoAngle;
+        lastCommandTime = millis();
+        
+        applyMotorCommands();
+        
+        // Debug output (comment out for production)
+        // Serial.print("STATUS: Motor=");
+        // Serial.print(currentMotorSpeed);
+        // Serial.print(", Servo=");
+        // Serial.println(currentServoAngle);
+      } else {
+        Serial.print("ERROR: Invalid command - Motor:");
+        Serial.print(motorSpeed);
+        Serial.print(", Servo:");
+        Serial.println(servoAngle);
+      }
+    } else {
+      Serial.print("ERROR: Invalid format - ");
+      Serial.println(command);
+    }
+  }
+}
+
+void applyMotorCommands() {
+  // Apply servo angle
+  servo.write(currentServoAngle);
+  
+  // Apply motor speed using your motor function
+  motor(1, currentMotorSpeed);
+}
+
+// Your motor control function
+void motor(int motorNumber, int speed) {
+  if (motorNumber == 1) {
+    if (speed == 0) {
+      // Stop motor
+      analogWrite(motor1A, 0);
+      analogWrite(motor1B, 0);
+    } else {
+      // Convert 1-100 speed to PWM (0-255)
+      int pwmValue = map(speed, 1, 100, 50, 255); // Minimum 50 for reliable start
+      
+      // Drive motor forward (adjust direction based on your wiring)
+      analogWrite(motor1A, pwmValue);
+      analogWrite(motor1B, 0);
+    }
+  }
+}
+```
+
+#### **Explanation**
+This is a program written in C++ in order to control the robot. It uses the Arduino as the muscle and Raspberry Pi as a main. When the program start, the arduino will take place in controlling the robot whether it's steering or driving. The Arduino will also read the light sensor input so that it can detect the lines on the track. The light sensor will send the detected input to ROS2. Then the ROS 2 will respond back with the data to control the motor and servo, in the meanwhile it will also collaborate with LiDAR and gyro in order to ensure that the robot would stay in the middle. And in case that the arduino doesn't receive the information from Raspberry Pi, the robot would stop and servo will return to it's middle position. And there are a few functions to explain.
+
+##### **Void readROSCommands**
+```C++
+void readROSCommands() {
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+    
+    // Parse "motor_speed,servo_angle" format
+    int commaIndex = command.indexOf(',');
+    if (commaIndex > 0) {
+      int motorSpeed = command.substring(0, commaIndex).toInt();
+      int servoAngle = command.substring(commaIndex + 1).toInt();
+      
+      // Validate and apply commands
+      if (motorSpeed >= 0 && motorSpeed <= 100 && 
+          servoAngle >= servoLeft && servoAngle <= servoRight) {
+        
+        currentMotorSpeed = motorSpeed;
+        currentServoAngle = servoAngle;
+        lastCommandTime = millis();
+        
+        applyMotorCommands();
+        
+        // Debug output (comment out for production)
+        // Serial.print("STATUS: Motor=");
+        // Serial.print(currentMotorSpeed);
+        // Serial.print(", Servo=");
+        // Serial.println(currentServoAngle);
+      } else {
+        Serial.print("ERROR: Invalid command - Motor:");
+        Serial.print(motorSpeed);
+        Serial.print(", Servo:");
+        Serial.println(servoAngle);
+      }
+    } else {
+      Serial.print("ERROR: Invalid format - ");
+      Serial.println(command);
+    }
+  }
+}
+```
+The `void readROSCommands` function is used to handle communication between ROS and the Arduino via the serial port. It receives commands containing motor speed and servo angle. The function first checks if there is any serial input. If data is available, it reads the line until it encounters a newline character (`\n`) and removes any extra spaces using `trim()`. It expects the command in the format `MOTOR_SPEED,SERVO_ANGLE` and converts these values into integers.  
+
+Next, it validates the values: the motor speed must be between 0 and 100, and the servo angle must be within the allowed range, defined as left = 67°, middle = 91°, and right = 113°. If the values are valid, the function updates the current motor speed and servo angle, records the time the command was received, and calls `applyMotorCommands()` to apply the command to the hardware.  
+
+If the command is invalid, the function sends an error message back over serial to notify the user. In summary, this function acts as a bridge between ROS and Arduino, ensuring that only valid motor and servo commands are applied.
+
+**This is the workflow**
+
+ROS (motor & servo command)
+        │
+        ▼
+Serial port (USB)
+        │
+        ▼
+readROSCommands() 
+        │
+        │  - Checks if serial data is available
+        │  - Reads line until '\n' and trims whitespace
+        │  - Splits command into motor speed & servo angle
+        │  - Validates motor (0-100) and servo (67-113)
+        ▼
+Valid? ──► Yes ──► Updates currentMotorSpeed & currentServoAngle
+        │            │
+        │            ▼
+        │       applyMotorCommands()  # Sends signals to motor & servo
+        │
+        └──► No ──► Sends error message via serial
+
+##### **void applyMotorCommands**
+```c++
+void applyMotorCommands() {
+  // Apply servo angle
+  servo.write(currentServoAngle);
+  
+  // Apply motor speed using your motor function
+  motor(1, currentMotorSpeed);
+}
+```
+The `void applyMotorCommands` function is responsible for sending the updated motor and servo values to the hardware itself. First, it sets the servo to the current angle by calling `servo.write(currentServoAngle)`, which physically moves the steering servo to the desired position. Then, it applies the motor speed by calling the `motor()` function with the motor number (in this case `1`) and the current motor speed (`currentMotorSpeed`).  
+
+In summary, this function takes the latest validated values from ROS or other sources and directly updates the servo and motor hardware, making the robot move and steer according to the commands.
+
+##### **void motor**
+```c++
+void motor(int motorNumber, int speed) {
+  if (motorNumber == 1) {
+    if (speed == 0) {
+      // Stop motor
+      analogWrite(motor1A, 0);
+      analogWrite(motor1B, 0);
+    } else {
+      // Convert 1-100 speed to PWM (0-255)
+      int pwmValue = map(speed, 1, 100, 50, 255); // Minimum 50 for reliable start
+      
+      // Drive motor forward (adjust direction based on your wiring)
+      analogWrite(motor1A, pwmValue);
+      analogWrite(motor1B, 0);
+    }
+  }
+}
+```
+The `void motor` function controls the motor speed, identified by `motorNumber`. In this case, it handles motor number 1. If the `speed` is 0, the function stops the motor by setting both motor pins (`motor1A` and `motor1B`) to 0 using `analogWrite`.  
+
+If the `speed` is greater than 0, it converts the 1–100 speed range into a PWM value between 50 and 255 using the `map()` function. The minimum value of 50 ensures the motor starts reliably. Then, it drives the motor forward by sending the PWM signal to `motor1A` while keeping `motor1B` at 0.  
+
+In short, this function translates a high-level speed command into a PWM signal to control the motor’s rotation safely and reliably.
