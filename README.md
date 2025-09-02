@@ -508,6 +508,12 @@ This switch is for cutting the power from the battery to the robot. The regulati
 </p>
 To power both the Raspberry Pi and Arduino Nano, we use a wire splitter to divide the battery connection into two wires per pole. For example, the positive pole is split into two separate wires, each directed to the positive input of its own step-down converter. The same is done for the negative pole. This ensures that both boards receive stable and isolated power from the same battery source.
 
+# Wiring Diagram
+This diagram will show how to wire and connect every hardware on our robot. 
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Schemes/YB-NEAB%20Wiring%20Diagram.png" width="500"/>
+</p>
+
 ## Full Robot Assembly
 <p align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Robot%20Photos/Robot.png" width="500"/>
