@@ -253,6 +253,55 @@ Here’s a timelapse of the printing process for some of our parts:
 |-----------------------|-------------------------|
 | ![](https://github.com/Snackels/NEAB/blob/main/Video/Acessories%20Timelapse.gif) | ![](https://github.com/Snackels/NEAB/blob/main/Video/Lower%20Chassis%20Timelapse.gif) |
 
+### Post-Printing Process
+After a print is complete, some defects may appear. The most common one is **stringing**, which can be removed by applying gentle heat with a lighter or heat gun. Stringing is usually caused by **moist filament**, especially with PETG. To prevent this, use a filament dryer to remove excess moisture.
+
+Another common issue is an **uneven or rough surface**. This can result from blobbing, an unlevel print bed, or low-quality filament. The surface can be improved by sanding with fine sandpaper.  
+
+Lastly, there’s **support and brim removal**. Supports are needed for complex prints, while brims improve bed adhesion. However, they often leave rough edges, which can be cleaned up with the right tools.
+
+---
+
+#### Essential 3D Printing Tools
+
+- **Plier**  
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Plier.png" width="200"/>
+</p>  
+Used for removing supports and trimming away unwanted parts of the print.
+
+---
+
+- **Glue Stick**  
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Glue%20Stick.png" width="200"/>
+</p>  
+Applied to the print bed as a **release agent**—not to increase stickiness, but to make parts easier to remove once printing is finished.
+
+---
+
+- **Lighter or Heat Gun**  
+| Lighter | Heat Gun |
+|---------|----------|
+| ![](https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Lighter.png) | ![](https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Heat%20Gun.png) |  
+
+Essential for removing stringing. In some cases, heat can also soften the plastic, making it easier to reshape.
+
+---
+
+- **Deburring Tool**  
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Deburring%20tool.png" width="200"/>
+</p>  
+Designed to remove brims. Brims help parts stick to the bed, but sometimes they bond too well, leaving rough edges. A deburring tool makes cleanup much easier.
+
+---
+
+- **Sandpaper**  
+<p align="center">
+  <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Sand%20Paper.png" width="200"/>
+</p>  
+Used for smoothing surfaces. Simply rub it over the rough areas for a few minutes to achieve a cleaner, polished finish.
 
 
 ## Full Chassis Assembly
