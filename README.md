@@ -283,7 +283,8 @@ Applied to the print bed as a **release agent**—not to increase stickiness, bu
 - **Lighter or Heat Gun**  
 | Lighter | Heat Gun |
 |---------|----------|
-| ![](https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Lighter.png) | ![](https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Heat%20Gun.png) |  
+| <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Lighter.png" width="150"/> | <img src="https://github.com/Snackels/NEAB/blob/main/Photos/Tools/Heat%20Gun.png" width="150"/> |
+
 
 Essential for removing stringing. In some cases, heat can also soften the plastic, making it easier to reshape.
 
