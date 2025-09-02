@@ -247,11 +247,12 @@ Ackermann steering is a method where the inner wheel turns sharper than the oute
 
 ## Printing Process
 To print this robot, we first use a slicer to generate the ****G-code** for the 3D printer. In our case, we use **Bambu Studio**. A slicer lets us set up a **print profile**, which defines whether the part will be strong, lightweight, or have a smooth surface. Once the profile is set, we check for **overhangs** — parts of the model that **“float”** without support. While printers can handle small overhangs, larger ones require supports. Supports are temporary structures that hold the object during printing and can be removed afterward. There are two main types: **normal supports** and **tree supports**, with tree supports being the most popular because they use less filament and print faster. After preparing everything, we start the print.
+
+Here’s a timelapse of the printing process for some of our parts:
 <div align="center">
   <img src="https://github.com/Snackels/NEAB/blob/main/Video/Acessories%20Timelapse.gif" width="45%" />
   <img src="https://github.com/Snackels/NEAB/blob/main/Video/Lower%20Chassis%20Timelapse.gif" width="45%" />
 </div>
-Here’s a timelapse of the printing process for some of our parts:
 
 
 ## Full Chassis Assembly
